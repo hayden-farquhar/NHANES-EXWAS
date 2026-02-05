@@ -100,19 +100,19 @@ if (!is.null(paq)) {
                         names(paq))
   paq <- paq[, paq_cols]
 
-  # Convert factor columns to numeric
-  for (col in setdiff(paq_cols, "SEQN")) {
-    paq[[col]] <- as.numeric(as.character(paq[[col]]))
-  }
-
-  # PAQ605=1 means vigorous rec. activity, PAD615 = min/week
-  # PAQ650=1 means moderate rec. activity, PAD660 = min/week
+  # PAQ605/PAQ650 can be text ("Yes"/"No") or numeric (1/2)
+  # PAD615/PAD660 are numeric minutes
   paq <- paq %>%
     mutate(
-      vig_min = ifelse(!is.na(PAQ605) & PAQ605 == 1 & !is.na(PAD615),
-                       PAD615, 0),
-      mod_min = ifelse(!is.na(PAQ650) & PAQ650 == 1 & !is.na(PAD660),
-                       PAD660, 0),
+      # Convert Yes/No or 1/2 to logical for activity questions
+      does_vigorous = as.character(PAQ605) %in% c("Yes", "1"),
+      does_moderate = as.character(PAQ650) %in% c("Yes", "1"),
+      # Convert minutes to numeric
+      PAD615_num = as.numeric(as.character(PAD615)),
+      PAD660_num = as.numeric(as.character(PAD660)),
+      # Calculate activity minutes
+      vig_min = ifelse(does_vigorous & !is.na(PAD615_num), PAD615_num, 0),
+      mod_min = ifelse(does_moderate & !is.na(PAD660_num), PAD660_num, 0),
       # Total moderate-equivalent minutes (vigorous counts double per WHO)
       pa_total_min = mod_min + 2 * vig_min,
       physically_active = as.numeric(pa_total_min >= 150)
@@ -136,17 +136,32 @@ if (!is.null(alq)) {
   alq_cols <- intersect(c("SEQN", "ALQ121", "ALQ130"), names(alq))
   alq <- alq[, alq_cols]
 
-  for (col in setdiff(alq_cols, "SEQN")) {
-    alq[[col]] <- as.numeric(as.character(alq[[col]]))
-  }
-
+  # ALQ121 is frequency of drinking (categorical text or codes)
+  # ALQ130 is number of drinks per occasion
   alq <- alq %>%
     mutate(
-      ALQ121 = ifelse(ALQ121 %in% c(777, 999), NA, ALQ121),
-      ALQ130 = ifelse(ALQ130 %in% c(777, 999), NA, ALQ130),
+      ALQ121_char = as.character(ALQ121),
+      # Convert frequency text labels to approximate occasions per year
+      # (or numeric codes if present)
+      freq_per_year = case_when(
+        ALQ121_char %in% c("Every day", "0") ~ 365,
+        ALQ121_char %in% c("Nearly every day", "1") ~ 300,
+        ALQ121_char %in% c("3 to 4 times a week", "2") ~ 182,
+        ALQ121_char %in% c("2 times a week", "3") ~ 104,
+        ALQ121_char %in% c("Once a week", "4") ~ 52,
+        ALQ121_char %in% c("2 to 3 times a month", "5") ~ 30,
+        ALQ121_char %in% c("Once a month", "6") ~ 12,
+        ALQ121_char %in% c("7 to 11 times in the last year", "7") ~ 9,
+        ALQ121_char %in% c("3 to 6 times in the last year", "8") ~ 4.5,
+        ALQ121_char %in% c("1 to 2 times in the last year", "9") ~ 1.5,
+        ALQ121_char %in% c("Never in the last year", "10") ~ 0,
+        TRUE ~ NA_real_
+      ),
+      ALQ130_num = as.numeric(as.character(ALQ130)),
+      ALQ130_num = ifelse(ALQ130_num %in% c(777, 999), NA, ALQ130_num),
       # Approximate drinks per week
-      drinks_per_week = ifelse(!is.na(ALQ121) & !is.na(ALQ130),
-                               (ALQ121 * ALQ130) / 52, NA)
+      drinks_per_week = ifelse(!is.na(freq_per_year) & !is.na(ALQ130_num),
+                               (freq_per_year * ALQ130_num) / 52, NA)
     )
 
   dat_full <- dat_full %>%
@@ -666,25 +681,35 @@ protein_sens_df %>%
 
 cat("\n=== 6-level race/ethnicity sensitivity ===\n\n")
 
-# Create 6-level race factor
+# Create 6-level race factor from RIDRETH3
+# RIDRETH3 can be either numeric codes OR text factor labels depending on how data was loaded
 if (!"race6" %in% names(dat_full) && "RIDRETH3" %in% names(dat_full)) {
-  dat_full$RIDRETH3_num <- as.numeric(as.character(dat_full$RIDRETH3))
+  ridreth3_char <- as.character(dat_full$RIDRETH3)
+
   dat_full <- dat_full %>%
     mutate(
       race6 = case_when(
-        RIDRETH3_num == 1 ~ "Mexican American",
-        RIDRETH3_num == 2 ~ "Other Hispanic",
-        RIDRETH3_num == 3 ~ "Non-Hispanic White",
-        RIDRETH3_num == 4 ~ "Non-Hispanic Black",
-        RIDRETH3_num == 6 ~ "Non-Hispanic Asian",
-        RIDRETH3_num == 7 ~ "Other/Multiracial",
+        # Match on text labels (nhanesA typically returns these)
+        ridreth3_char == "Mexican American" ~ "Mexican American",
+        ridreth3_char == "Other Hispanic" ~ "Other Hispanic",
+        ridreth3_char == "Non-Hispanic White" ~ "Non-Hispanic White",
+        ridreth3_char == "Non-Hispanic Black" ~ "Non-Hispanic Black",
+        ridreth3_char == "Non-Hispanic Asian" ~ "Non-Hispanic Asian",
+        ridreth3_char == "Other Race - Including Multi-Racial" ~ "Other/Multiracial",
+        # Also match numeric codes if data was loaded differently
+        ridreth3_char == "1" ~ "Mexican American",
+        ridreth3_char == "2" ~ "Other Hispanic",
+        ridreth3_char == "3" ~ "Non-Hispanic White",
+        ridreth3_char == "4" ~ "Non-Hispanic Black",
+        ridreth3_char == "6" ~ "Non-Hispanic Asian",
+        ridreth3_char == "7" ~ "Other/Multiracial",
         TRUE ~ NA_character_
       ),
       race6 = factor(race6, levels = c("Non-Hispanic White", "Non-Hispanic Black",
                                         "Mexican American", "Other Hispanic",
                                         "Non-Hispanic Asian", "Other/Multiracial"))
     )
-  cat(sprintf("6-level race distribution:\n"))
+  cat("6-level race distribution:\n")
   print(table(dat_full$race6, useNA = "ifany"))
 }
 
