@@ -1,0 +1,19 @@
+# Large R binary data (regenerable from scripts + NHANES API)
+*.RData
+.RDataTmp
+
+# R session artifacts
+.Rhistory
+.RData
+.Rprofile
+.Renviron
+
+# RStudio IDE
+.Rproj.user/
+
+# Claude Code config
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,16 @@
+"exposure","outcome","exp_label","out_label","n_analyses","n_dir_match","n_nominal_sig","n_suggestive","median_pct_change","robust"
+"log_LBXBMN","BMXBMI","Blood manganese","BMI",9,9,9,9,5.83512985549401,TRUE
+"log_LBXBMN","BMXWAIST","Blood manganese","Waist circumference",9,9,9,9,4.05418110506636,TRUE
+"log_LBXBPB","BMXBMI","Blood lead","BMI",9,9,9,9,11.5879997133484,TRUE
+"log_LBXBPB","BMXWAIST","Blood lead","Waist circumference",9,9,9,9,10.9806150454054,TRUE
+"log_URXUIO","BMXBMI","Urinary iodine","BMI",9,9,9,9,0.710744788499741,TRUE
+"log_URXUP8","LBXSBU","Urinary perchlorate","BUN",9,9,9,9,5.48866038558869,TRUE
+"log_LBXBGM","LBXSAPSI","Methylmercury (blood)","Alk Phosphatase",9,9,8,9,3.10966873993495,TRUE
+"log_LBXBPB","LBXGH","Blood lead","HbA1c",9,9,8,9,10.5166102542775,TRUE
+"log_LBXBPB","LBXTC","Blood lead","Total cholesterol",9,9,8,9,6.15531301529576,TRUE
+"log_LBXBSE","LBXHGB","Blood selenium","Hemoglobin",9,9,8,9,8.35586779693773,TRUE
+"log_LBXBSE","LBXRBCSI","Blood selenium","RBC count",9,9,8,9,2.1103982165546,TRUE
+"log_LBXBSE","LBXTC","Blood selenium","Total cholesterol",9,9,8,9,2.92880323758471,TRUE
+"log_LBXTHG","log_LBXSAPSI","Blood mercury (total)","Alk Phosphatase (log)",9,9,8,8,2.80140877237038,TRUE
+"log_URXUDMA","LBXSUA","Dimethylarsonic acid (urinary)","Uric acid",9,9,8,9,1.35361789388133,TRUE
+"log_LBXBGM","BMXWAIST","Methylmercury (blood)","Waist circumference",9,9,7,9,13.087053913301,TRUE
