@@ -1,0 +1,4 @@
+"Subsample","N (raw)","N (eff)","Min f2 (Bonf)","Min R2 (Bonf)","Min f2 (FDR)","Min R2 (FDR)"
+"Blood biomarkers (WTMEC2YR)",4870,2435,"0.0157","1.547%","0.0120","1.189%"
+"Urinary subsample (WTSA2YR)",1580,790,"0.0491","4.683%","0.0375","3.617%"
+"Surplus serum (WTSSBJ2Y)",1370,685,"0.0568","5.377%","0.0434","4.159%"
