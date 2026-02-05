@@ -20,6 +20,7 @@ source("04_dose_response.R")          # Quartile dose-response for validated fin
 source("05_sensitivity_analyses.R")   # 9 robustness specifications per finding
 source("06_figures_tables.R")         # All figures + Tables 1-3
 source("07_novelty_assessment.R")     # PubMed literature search + novelty classification
+source("09_additional_analyses.R")    # Fish/PA/alcohol/creatinine sensitivity, volcano, power
 ```
 
 Required packages: `nhanesA`, `survey`, `tidyverse`, `broom`, `ggrepel`, `forestplot`, `pheatmap`, `kableExtra`, `tableone`, `knitr`, `rmarkdown`. Script `00_functions.R` auto-installs missing packages.
@@ -40,6 +41,8 @@ Required packages: `nhanesA`, `survey`, `tidyverse`, `broom`, `ggrepel`, `forest
 04, 05, 07 (parallel) → dose_response, sensitivity, novelty .RData
     ↓
 06 → figures/ (PDFs, PNGs, table CSVs)
+    ↓
+09 → additional sensitivity (fish, PA, alcohol, creatinine), improved volcano, power
 ```
 
 ### Key Components in `00_functions.R`

@@ -21,6 +21,7 @@ We screened 2,796 chemical-health associations in a nationally representative US
 | `05_sensitivity_analyses.R` | Robustness checks: sex/age strata, outlier exclusion, education, cotinine, adults-only | No |
 | `06_figures_tables.R` | Volcano plot, forest plot, dose-response curves, heatmap, Table 1-3 | No |
 | `07_novelty_assessment.R` | Structured PubMed literature search and novelty classification | **Yes** |
+| `09_additional_analyses.R` | Fish/PA/alcohol/creatinine sensitivity, improved volcano plot, power analysis, expanded PubMed search | **Yes** |
 
 ### Input Data (CSV)
 
@@ -44,12 +45,14 @@ These three files are outputs of the original interactive screening phase (run i
 | `sensitivity_results.csv` | `05_sensitivity_analyses.R` |
 | `sensitivity_summary.csv` | `05_sensitivity_analyses.R` |
 | `novelty_assessment.csv` | `07_novelty_assessment.R` |
+| `additional_sensitivity_results.csv` | `09_additional_analyses.R` |
+| `power_analysis.csv` | `09_additional_analyses.R` |
 
 ### Figures and Tables (`figures/`)
 
 | File | Description |
 |------|-------------|
-| `fig1_volcano.*` | Volcano plot of all 2,796 tests |
+| `fig1_volcano.*` | Volcano plot of all 2,796 tests (top 10 labeled) |
 | `fig2_forest.*` | Forest plot of 15 validated findings |
 | `fig3_dose_response.*` | Dose-response curves (quartile means) |
 | `fig4_heatmap.pdf` | Sensitivity analysis heatmap |
@@ -99,6 +102,9 @@ source("06_figures_tables.R")          # ~2 min
 
 # Step 7: Novelty assessment (PubMed search)
 source("07_novelty_assessment.R")      # ~5 min, requires internet
+
+# Step 8: Additional analyses (reviewer-requested)
+source("09_additional_analyses.R")     # ~10 min, requires internet
 ```
 
 ### Note on the initial screening phase
