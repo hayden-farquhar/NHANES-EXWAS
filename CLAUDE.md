@@ -21,6 +21,7 @@ source("05_sensitivity_analyses.R")   # 9 robustness specifications per finding
 source("06_figures_tables.R")         # All figures + Tables 1-3
 source("07_novelty_assessment.R")     # PubMed literature search + novelty classification
 source("09_additional_analyses.R")    # Fish/PA/alcohol/creatinine sensitivity, volcano, power
+source("10_reviewer_analyses.R")      # Protein intake, 6-level race, within-round FDR, LOD analysis
 ```
 
 Required packages: `nhanesA`, `survey`, `tidyverse`, `broom`, `ggrepel`, `forestplot`, `pheatmap`, `kableExtra`, `tableone`, `knitr`, `rmarkdown`. Script `00_functions.R` auto-installs missing packages.
@@ -43,6 +44,8 @@ Required packages: `nhanesA`, `survey`, `tidyverse`, `broom`, `ggrepel`, `forest
 06 → figures/ (PDFs, PNGs, table CSVs)
     ↓
 09 → additional sensitivity (fish, PA, alcohol, creatinine), improved volcano, power
+    ↓
+10 → reviewer-requested analyses: protein intake, 6-level race, within-round FDR, STROBE
 ```
 
 ### Key Components in `00_functions.R`
@@ -95,4 +98,4 @@ The three screening CSVs (`exwas_results_pfas_thyroid.csv`, `exwas_broad_screen_
 
 ## Results Summary
 
-2,796 tests → 26 FDR-significant → 15/21 cross-cycle validated (71%) → all 15 robust across 9 sensitivity analyses → 3 HIGH novelty (DMA-uric acid, perchlorate-BUN, methylmercury-waist), 5 MODERATE novelty.
+2,796 tests → 26 FDR-significant → 15/21 cross-cycle validated (71%) → 14 robust across all sensitivity analyses (iodine-BMI eliminated as dilution artifact; methylmercury-waist suspected dietary confounder) → 2 confirmed HIGH novelty (DMA-uric acid, perchlorate-BUN), 5 MODERATE novelty.

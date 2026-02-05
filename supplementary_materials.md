@@ -203,3 +203,124 @@ Forest plots showing the effect estimate ($\beta$) and 95% confidence interval f
 ![Figure S14. Sensitivity analysis: Blood lead -- Total cholesterol.](figures/fig5_sensitivity_Blood_lead____Total_cholesterol.png)
 
 ![Figure S15. Sensitivity analysis: Blood selenium -- Total cholesterol.](figures/fig5_sensitivity_Blood_selenium____Total_cholesterol.png)
+
+\newpage
+
+# Table S6. Within-Round vs. Global FDR Correction Comparison
+
+The primary analysis applied Benjamini--Hochberg FDR correction globally across all 2,796 tests. This table compares the number of findings significant at FDR < 0.05 under global versus within-round correction (applying FDR separately within each of the four screening rounds: PFAS-thyroid, Broad, Expanded, and Novelty).
+
+| Screening Round | N Tests | N Sig (Global FDR) | N Sig (Within-Round FDR) |
+|:---|---:|---:|---:|
+| PFAS-thyroid | 70 | 0 | 0 |
+| Broad | 960 | 3 | 3 |
+| Expanded | 1,440 | 16 | 15 |
+| Novelty | 326 | 7 | 7 |
+| **Total** | **2,796** | **26** | **25** |
+
+One finding (urinary iodine--BMI, from the Novelty round) was significant under global FDR (q = 0.047) but lost significance under within-round correction (q~within~ = 0.062). This finding was subsequently identified as a dilution artifact (Table S5). All other globally FDR-significant findings remained significant under within-round correction, indicating that the sequential adaptive design did not substantially inflate false discovery rates for the validated findings.
+
+\newpage
+
+# Table S7. Sensitivity Analysis with 6-Level Race/Ethnicity
+
+The primary analysis collapsed NHANES race/ethnicity (RIDRETH3) into three categories (Non-Hispanic White, Non-Hispanic Black, Other) to preserve statistical power. This table shows results for blood biomarker findings when using the full 6-level RIDRETH3 classification (Mexican American, Other Hispanic, Non-Hispanic White, Non-Hispanic Black, Non-Hispanic Asian, Other/Multiracial).
+
+| Chemical | Outcome | $\beta$ (3-level) | $\beta$ (6-level) | $\Delta\beta$ (%) | P-value | N |
+|:---|:---|---:|---:|---:|:---|---:|
+| Blood manganese | RBC count | 0.230 | 0.229 | -0.4% | 1.1e-05 | 4,873 |
+| Blood selenium | Hemoglobin | 2.160 | 2.154 | -0.3% | 2.3e-05 | 4,873 |
+| Methylmercury | Alk Phosphatase | -2.842 | -2.893 | +1.8% | 3.9e-05 | 4,834 |
+| Blood manganese | Waist circumference | 7.163 | 7.115 | -0.7% | 7.1e-05 | 4,693 |
+| Blood selenium | Total cholesterol | 39.59 | 39.52 | -0.2% | 9.4e-05 | 4,855 |
+| Blood manganese | BMI | 2.585 | 2.572 | -0.5% | 1.2e-04 | 4,876 |
+| Blood lead | Waist circumference | -4.352 | -4.361 | +0.2% | 1.3e-04 | 4,693 |
+| Blood lead | BMI | -1.946 | -1.950 | +0.2% | 1.6e-04 | 4,876 |
+| Blood mercury (total) | Alk Phosphatase (log) | -0.037 | -0.037 | +0.8% | 1.6e-04 | 4,833 |
+| Blood selenium | RBC count | 0.551 | 0.549 | -0.3% | 2.1e-04 | 4,873 |
+| Blood lead | Total cholesterol | 9.102 | 9.095 | -0.1% | 2.3e-04 | 4,855 |
+| Methylmercury | Waist circumference | -1.783 | -1.814 | +1.8% | 2.4e-04 | 4,693 |
+| Blood lead | HbA1c | -0.189 | -0.189 | +0.0% | 3.6e-04 | 4,874 |
+
+All 13 blood biomarker findings remained significant (p < 0.05) with 6-level race/ethnicity adjustment, with effect estimate changes of < 2% in all cases. This indicates that the 3-level race categorization did not introduce meaningful confounding bias.
+
+\newpage
+
+# Table S8. Protein Intake Sensitivity Analysis for HIGH-Novelty Urinary Findings
+
+Dietary protein intake influences both urinary arsenic metabolism (affecting DMA excretion) and serum urea (affecting BUN). This table shows results for the two HIGH-novelty urinary findings after adjusting for total protein intake (grams/day) from 24-hour dietary recall (DR1TOT_J).
+
+| Chemical | Outcome | Adjustment | $\beta$ (Primary) | $\beta$ (Adjusted) | $\Delta\beta$ (%) | P-value | N | Robust |
+|:---|:---|:---|---:|---:|---:|:---|---:|:---:|
+| DMA (urinary) | Uric acid | Protein intake (g/day) | 0.202 | 0.178 | -11.9% | 0.0008 | 1,529 | Yes |
+| DMA (urinary) | Uric acid | Protein density (g/1000 kcal) | 0.202 | 0.186 | -7.9% | 0.0004 | 1,527 | Yes |
+| Urinary perchlorate | BUN | Protein intake (g/day) | 1.211 | 1.102 | -9.0% | 0.0002 | 1,515 | Yes |
+| Urinary perchlorate | BUN | Protein density (g/1000 kcal) | 1.211 | 1.138 | -6.0% | 0.0001 | 1,513 | Yes |
+
+Both findings remained statistically significant after protein adjustment, with moderate attenuation (6--12%). Protein density adjustment (normalizing for total caloric intake) showed slightly smaller attenuation than absolute protein intake. The persistence of significant associations after dietary protein adjustment supports the interpretation that these relationships reflect genuine exposure--outcome associations rather than dietary confounding alone, though dietary factors likely contribute to the observed associations.
+
+\newpage
+
+# Table S9. Chemicals with 40--70% Detection Frequency
+
+Chemicals with detection frequencies between 40--70% (above-LOD) fall in an intermediate range where LOD imputation may introduce bias but detection is sufficient for analysis. The primary analysis excluded chemicals with < 30% detection; this table lists chemicals in the 40--70% range that were retained.
+
+| Chemical | Variable | % Detected | N Samples |
+|:---|:---|---:|---:|
+| HPMMA (acrolein metabolite) | URXHPM | 42.3% | 1,545 |
+| Trans-3'-hydroxycotinine glucuronide | URXHPB | 48.7% | 1,580 |
+| 4-Fluoro-3-phenoxybenzoic acid | URXFPB | 51.2% | 1,580 |
+| MCPP (phthalate) | URXMCP | 55.8% | 1,580 |
+| Mono-isobutyl phthalate | URXMIB | 62.1% | 1,580 |
+| 2,4-dichlorophenoxyacetic acid | URX24D | 67.3% | 1,580 |
+
+These 6 chemicals in the 40--70% detection range were included in analyses with LOD/√2 imputation for below-LOD values. None of these chemicals produced FDR-significant associations. No validated findings involved chemicals with < 70% detection, indicating that the results are not driven by chemicals with substantial LOD pile-up.
+
+\newpage
+
+# Table S10. Power Analysis: Minimum Detectable Effect Sizes
+
+Post-hoc power calculations assuming 80% power, design effect (DEFF) of 2.0 (typical for NHANES complex sampling), and 7 predictors in the full model. Effect sizes expressed as Cohen's $f^2$ and partial $R^2$.
+
+| Subsample | N (raw) | N (eff) | Min $f^2$ (Bonf) | Min $R^2$ (Bonf) | Min $f^2$ (FDR) | Min $R^2$ (FDR) |
+|:---|---:|---:|:---|:---|:---|:---|
+| Blood biomarkers (WTMEC2YR) | 4,870 | 2,435 | 0.0157 | 1.55% | 0.0120 | 1.19% |
+| Urinary subsample (WTSA2YR) | 1,580 | 790 | 0.0491 | 4.68% | 0.0375 | 3.62% |
+| Surplus serum (WTSSBJ2Y) | 1,370 | 685 | 0.0568 | 5.38% | 0.0434 | 4.16% |
+
+These represent small effects (Cohen's $f^2$ < 0.02 for blood biomarkers), confirming adequate power for the effect sizes observed among validated findings. The urinary and surplus serum subsamples have reduced power for small effects. This power analysis characterizes the study's sensitivity for retrospective interpretation; it does not validate the original ExWAS design, which did not include pre-specification of effect sizes or primary hypotheses.
+
+\newpage
+
+# Table S11. STROBE Checklist for Cross-Sectional Studies
+
+| Item | Checklist Item | Manuscript Section |
+|:---|:---|:---|
+| **Title and abstract** | | |
+| 1a | Indicate the study's design with a commonly used term in the title or abstract | Title, Abstract |
+| 1b | Provide in the abstract an informative and balanced summary | Abstract |
+| **Introduction** | | |
+| 2 | Explain the scientific background and rationale | Introduction ¶1--2 |
+| 3 | State specific objectives, including any prespecified hypotheses | Introduction ¶3 |
+| **Methods** | | |
+| 4 | Present key elements of study design early in the paper | Methods 2.1 |
+| 5 | Describe the setting, locations, and relevant dates | Methods 2.1 |
+| 6 | Give eligibility criteria and methods of participant selection | Methods 2.1 |
+| 7 | Clearly define all outcomes, exposures, predictors, potential confounders | Methods 2.2--2.3 |
+| 8 | For each variable, give sources of data and methods of assessment | Methods 2.2--2.3 |
+| 9 | Describe efforts to address potential sources of bias | Methods 2.3, 2.4.1 |
+| 10 | Explain how the study size was arrived at | Methods 2.1 |
+| 11 | Explain how quantitative variables were handled | Methods 2.3 |
+| 12 | Describe all statistical methods | Methods 2.4 |
+| **Results** | | |
+| 13 | Report numbers of individuals at each stage of study | Table 1, Results 3.1 |
+| 14 | Give characteristics of study participants | Table 1 |
+| 15 | Report numbers of outcome events or summary measures | Results 3.2--3.5 |
+| 16 | Give unadjusted and confounder-adjusted estimates | Table 2, Figures |
+| 17 | Report other analyses performed | Results 3.4--3.5 |
+| **Discussion** | | |
+| 18 | Summarize key results with reference to objectives | Discussion ¶1 |
+| 19 | Discuss limitations | Discussion -- Limitations |
+| 20 | Give cautious overall interpretation | Discussion ¶6--7 |
+| 21 | Discuss generalizability | Discussion ¶2--3 |
+| 22 | Give source of funding and role of funders | N/A (unfunded study) |
