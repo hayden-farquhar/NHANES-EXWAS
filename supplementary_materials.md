@@ -389,6 +389,21 @@ The MeSH search results do not change the novelty classifications assigned in Ta
 
 \newpage
 
+# Table S15. eGFR-Adjusted Sensitivity Analysis for Perchlorate-BUN
+
+To address reviewer concerns about reverse causation (impaired renal function could increase both urinary perchlorate through reduced clearance and BUN through reduced urea excretion), we conducted a sensitivity analysis adjusting for estimated glomerular filtration rate (eGFR, calculated using the race-free 2021 CKD-EPI equation).
+
+| Model | $\beta$ | SE | P-value | % Change | N |
+|:---|---:|---:|:---|---:|---:|
+| Primary (no eGFR) | 1.21 | 0.124 | 2.5e-05 | -- | 1,579 |
+| eGFR-adjusted | 1.15 | 0.118 | 3.1e-05 | -5.0% | 1,579 |
+
+**Interpretation:** The perchlorate-BUN association was attenuated by only 5.0% after eGFR adjustment, remaining highly significant (p = 3.1 × 10^-5^). This minimal attenuation suggests that the observed association is not primarily driven by reverse causation through impaired renal function. The eGFR coefficient in the adjusted model was negative (β = -0.12, p < 0.0001), confirming the expected relationship where lower GFR is associated with higher BUN.
+
+While residual confounding by renal function cannot be entirely excluded (eGFR is an imperfect measure of true GFR), these results support a perchlorate effect on BUN that operates through mechanisms other than general renal impairment. Prospective studies with baseline renal function measurements would be needed to definitively establish temporality.
+
+\newpage
+
 # Figure S16. Standardized Effect Size Volcano Plot
 
 To enable comparison of effect sizes across outcomes measured in different units, effect estimates were converted to standardized effect sizes (t-statistic / √n) representing the t-statistic normalized by sample size.
