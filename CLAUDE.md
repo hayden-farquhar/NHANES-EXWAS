@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Environment-wide association study (ExWAS) screening 92 chemical biomarkers against 48 health outcomes in NHANES 2017-2018, with cross-cycle validation in 2015-2016. R-based, using `survey` for complex sampling design and `nhanesA` for data access. GitHub: https://github.com/hayden-farquhar/NHANES-EXWAS
 
+**Note:** This repository contains only the reproducible analysis scripts, input data, and generated figures. The manuscript files (manuscript.md, supplementary_materials.md, and their PDFs) are maintained in the project root (parent directory), not in this public repository.
+
 ## Running the Pipeline
 
 Scripts run sequentially in R from the project root. All use relative paths and depend on the `.Rproj` setting the working directory.
