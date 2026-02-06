@@ -424,13 +424,9 @@ Partial R² represents the proportion of outcome variance explained by the expos
 
 The following DAG illustrates the rationale for covariate selection in the primary analysis model.
 
-## Exposure-Outcome Pathway
+![Figure S18. Directed acyclic graph (DAG) showing the assumed causal structure underlying covariate selection. Socioeconomic factors (age, sex, race/ethnicity, poverty-income ratio) are common causes of both chemical exposure and health outcomes. BMI is included as a covariate when the outcome is not anthropometric, but omitted when the outcome is BMI or waist circumference to avoid collider bias. Smoking is adjusted as both an exposure source and independent risk factor. Variables on the causal pathway (e.g., metabolic intermediates) are not adjusted to avoid blocking the effect of interest.](figures/fig_s18_dag.pdf)
 
-The primary question is whether chemical exposure (E) affects health outcome (Y):
-
-    E → Y
-
-## Confounders Adjusted
+## Covariate Rationale
 
 1. **Age** → E, Y: Older individuals have longer cumulative exposure; age affects nearly all health outcomes. Classic confounder.
 
@@ -444,37 +440,9 @@ The primary question is whether chemical exposure (E) affects health outcome (Y)
 
 6. **Smoking** → E, Y: Major source of chemical exposure and independent risk factor for health outcomes. Classic confounder.
 
-## DAG Visualization (ASCII)
-
-```
-                    +---------------------------+
-                    |      Socioeconomic        |
-                    |    (Age, Sex, Race, PIR)  |
-                    +-----------+---------------+
-                                |
-                    +-----------+------------+
-                    |           |            |
-                    v           v            v
-              +---------+ +---------+ +---------+
-              | Chemical| |   BMI   | | Health  |
-              | Exposure| |(if not Y)| | Outcome |
-              +----+----+ +----+----+ +----+----+
-                   |           |            |
-                   |     +-----+------+     |
-                   |     |            |     |
-                   +-----+------------+-----+
-                              |
-                              v
-                        Observed Y
-```
-
 ## Variables NOT Adjusted (Potential Mediators)
 
 - **Metabolic pathways** (glucose, lipids, etc.): May be on the causal pathway from E to Y. Adjusting would block the causal effect we aim to estimate.
-
-## Collider Handling
-
-- **BMI when Y is anthropometric**: If E → BMI and E → waist, then BMI is a collider on the path to waist circumference. BMI is therefore **omitted** from models where BMI or waist circumference is the outcome.
 
 ## DAG Limitations
 
