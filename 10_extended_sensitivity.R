@@ -294,8 +294,8 @@ std_results <- all_results %>%
 # Create standardized volcano plot
 p_std_volcano <- ggplot(std_results, aes(x = std_beta, y = neg_log_p)) +
   geom_point(aes(color = case_when(
-    fdr_global < 0.05/2796 ~ "Bonferroni",
-    fdr_global < 0.05 ~ "FDR < 0.05",
+    p_fdr_global < 0.05/2796 ~ "Bonferroni",
+    p_fdr_global < 0.05 ~ "FDR < 0.05",
     p_value < 0.05 ~ "Nominal (p<0.05)",
     TRUE ~ "Not significant"
   )), alpha = 0.6, size = 1.5) +
@@ -308,7 +308,7 @@ p_std_volcano <- ggplot(std_results, aes(x = std_beta, y = neg_log_p)) +
   geom_hline(yintercept = -log10(0.05/2796), linetype = "dashed", color = "red", alpha = 0.5) +
   # Label FDR-significant points
   geom_text_repel(
-    data = std_results %>% filter(fdr_global < 0.05) %>%
+    data = std_results %>% filter(p_fdr_global < 0.05) %>%
       slice_min(p_value, n = 10),
     aes(label = paste0(CHEM_LABELS[exposure] %||% exposure, " -> ",
                        OUTCOME_LABELS[outcome] %||% outcome)),
@@ -330,8 +330,8 @@ cat("   Saved standardized volcano plot to figures/fig_s16_volcano_standardized.
 # Also create partial R^2 version
 p_r2_volcano <- ggplot(std_results, aes(x = partial_r2 * 100, y = neg_log_p)) +
   geom_point(aes(color = case_when(
-    fdr_global < 0.05/2796 ~ "Bonferroni",
-    fdr_global < 0.05 ~ "FDR < 0.05",
+    p_fdr_global < 0.05/2796 ~ "Bonferroni",
+    p_fdr_global < 0.05 ~ "FDR < 0.05",
     p_value < 0.05 ~ "Nominal (p<0.05)",
     TRUE ~ "Not significant"
   )), alpha = 0.6, size = 1.5) +
