@@ -4,13 +4,13 @@ author:
   - Hayden Farquhar, MBBS, MPHTM (hayden.farquhar@icloud.com; ORCID 0009-0002-6226-440X)
 date: February 6, 2026
 abstract: |
-  **Background:** Environment-wide association studies (ExWAS) offer a systematic, hypothesis-free approach to identifying chemical biomarker--health outcome associations, yet few have applied rigorous multi-stage validation pipelines to population-representative data.
+  **Background:** Environment-wide association studies (ExWAS) offer a systematic approach to identifying chemical biomarker--health outcome associations, yet few have applied rigorous multi-stage validation.
 
-  **Methods:** We conducted an ExWAS using the National Health and Nutrition Examination Survey (NHANES) 2017--2018, screening 92 chemical biomarkers across 9 chemical classes against 48 health outcomes spanning 7 clinical domains (2,796 exposure--outcome tests). Survey-weighted linear regression models adjusted for age, sex, race/ethnicity, poverty--income ratio, BMI, and smoking status. We applied Benjamini--Hochberg false discovery rate (FDR) correction globally across all tests. Findings passing FDR < 0.05 were subjected to cross-cycle validation in NHANES 2015--2016, dose--response analysis using quartile models, and a comprehensive battery of sensitivity analyses. A structured PubMed literature search assessed novelty.
+  **Methods:** We screened 92 chemical biomarkers against 48 health outcomes in NHANES 2017--2018 (2,796 tests conducted across four sequential screening rounds). Survey-weighted regression models adjusted for age, sex, race/ethnicity, poverty--income ratio, BMI, and smoking. Global FDR correction was applied, with cross-cycle validation in NHANES 2015--2016 serving as the primary safeguard against false positives given the adaptive screening design.
 
-  **Results:** The strongest novel finding was dimethylarsonic acid (DMA) positively associated with uric acid ($\beta$ = 0.20 mg/dL per log-unit increase, 95% CI: 0.15--0.26, FDR = 0.030), replicated in 2015--2016 ($\beta$ = 0.21, p = 0.003)---to our knowledge, the first report linking this arsenic metabolite specifically to serum uric acid levels. Urinary perchlorate was associated with blood urea nitrogen ($\beta$ = 1.21 mg/dL, FDR = 0.024), suggesting previously unrecognized renal effects. Of 2,796 tests, 26 associations reached global FDR < 0.05; of 21 testable associations, 15 (71%) validated in the independent 2015--2016 cycle. All 15 showed significant dose--response trends (p~trend~ < 0.005), with 14 exhibiting monotonic gradients. All 15 were robust across 9 primary and 4 additional sensitivity specifications; urinary creatinine adjustment identified the iodine--BMI association as a probable dilution artifact ($\beta$ attenuated 66%, p = 0.15), yielding 14 robustly validated findings. A third HIGH-novelty finding (methylmercury with waist circumference) is likely a dietary confounder artifact reflecting fish consumption patterns; adjustment for a crude fish frequency variable did not attenuate this association, but the single-item measure may inadequately capture dietary confounding.
+  **Results:** Of 26 FDR-significant associations, 15 of 21 testable (71%) validated cross-cycle with concordant direction and p < 0.05. All 15 showed significant dose--response trends; 14 were robust after comprehensive sensitivity analyses including urinary creatinine adjustment, which identified one association (iodine--BMI) as a dilution artifact. Two potentially novel findings emerged: dimethylarsonic acid positively associated with uric acid ($\beta$ = 0.20 mg/dL, 95% CI: 0.15--0.26), and urinary perchlorate with blood urea nitrogen ($\beta$ = 1.21 mg/dL, 95% CI: 0.97--1.45).
 
-  **Conclusions:** This systematic screening with built-in multi-stage validation identified 14 robust chemical--health associations, including two potentially novel findings (DMA--uric acid, perchlorate--BUN) that warrant targeted investigation in prospective cohorts to establish temporality and assess clinical significance.
+  **Conclusions:** Multi-stage ExWAS with cross-cycle validation identified 14 robust chemical--health associations, including two novel findings (DMA--uric acid, perchlorate--BUN) warranting prospective investigation.
 ---
 
 **Abbreviations:** ALP, alkaline phosphatase; BMI, body mass index; BUN, blood urea nitrogen; DMA, dimethylarsonic acid; eGFR, estimated glomerular filtration rate; ExWAS, environment-wide association study; FDR, false discovery rate; HbA1c, glycated hemoglobin; LOD, limit of detection; NHANES, National Health and Nutrition Examination Survey; PIR, poverty--income ratio; RBC, red blood cell.
@@ -73,7 +73,7 @@ Survey-weighted linear regression models were fit for each exposure--outcome pai
 
 $$\text{Outcome} = \beta_1 \cdot \log(\text{Exposure}) + \beta_2 \cdot \text{Age} + \beta_3 \cdot \text{Female} + \beta_4 \cdot \text{Race}_3 + \beta_5 \cdot \text{PIR} + \beta_6 \cdot \text{BMI} + \beta_7 \cdot \text{Smoker} + \varepsilon$$
 
-where Race~3~ was a three-level variable (Non-Hispanic White, Non-Hispanic Black, Other) collapsed from the six-level NHANES RIDRETH3 variable to ensure model stability across the many exposure--outcome combinations---particularly in subsample analyses with smaller effective sample sizes where finer racial/ethnic categories would produce sparse cells. A sensitivity analysis using the full six-level RIDRETH3 specification was conducted for the 15 validated findings in blood-based biomarker analyses (n > 4,800), where sample sizes supported the finer categorization (Table S7). PIR is the poverty--income ratio, BMI is body mass index (omitted when BMI or waist circumference was the outcome to avoid collider bias; effect sizes for anthropometric outcomes are therefore not directly comparable to those for other outcomes), and Smoker is a binary indicator for current smoking. The covariate set was selected a priori to capture the primary confounding pathways between chemical exposures and health outcomes: age (cumulative exposure and physiological changes), sex (metabolic differences and exposure patterns), race/ethnicity (socioeconomic and dietary factors), PIR (residential and occupational exposure gradients), BMI (metabolic confounding), and smoking (a major chemical exposure source and independent risk factor). This parsimonious specification preserves degrees of freedom within the NHANES complex survey design while addressing the most important confounders. A directed acyclic graph (DAG) illustrating the causal assumptions underlying this covariate selection is provided in Figure S18. Survey weights were selected based on exposure source: WTMEC2YR for blood-based biomarkers (LBX prefix), WTSA2YR for urinary subsample A biomarkers (URX prefix), and WTSSBJ2Y for surplus serum samples (SS prefix).
+where Race~3~ was a three-level variable (Non-Hispanic White, Non-Hispanic Black, Other) collapsed from the six-level NHANES RIDRETH3 variable to ensure model stability across the many exposure--outcome combinations---particularly in subsample analyses with smaller effective sample sizes where finer racial/ethnic categories would produce sparse cells. A sensitivity analysis using the full six-level RIDRETH3 specification was conducted for the 15 validated findings in blood-based biomarker analyses (n > 4,800), where sample sizes supported the finer categorization (Table S7). PIR is the poverty--income ratio, BMI is body mass index (omitted when BMI or waist circumference was the outcome to avoid collider bias; effect sizes for anthropometric outcomes are therefore not directly comparable to those for other outcomes), and Smoker is a binary indicator for current smoking. The covariate set was selected a priori to capture the primary confounding pathways between chemical exposures and health outcomes: age (cumulative exposure and physiological changes), sex (metabolic differences and exposure patterns), race/ethnicity (socioeconomic and dietary factors), PIR (residential and occupational exposure gradients), BMI (metabolic confounding), and smoking (a major chemical exposure source and independent risk factor). Alcohol consumption was not included in the primary model due to extensive missingness from NHANES ALQ_J skip patterns (only 3,143 of 5,265 blood biomarker participants and 1,035 of ~1,580 urinary subsample participants had complete alcohol data); alcohol adjustment was instead conducted as a sensitivity analysis (see below). This parsimonious specification preserves degrees of freedom within the NHANES complex survey design while addressing the most important confounders. A directed acyclic graph (DAG) illustrating the causal assumptions underlying this covariate selection is provided in Figure S18. Survey weights were selected based on exposure source: WTMEC2YR for blood-based biomarkers (LBX prefix), WTSA2YR for urinary subsample A biomarkers (URX prefix), and WTSSBJ2Y for surplus serum samples (SS prefix).
 
 ### Multiple testing correction
 
@@ -101,7 +101,7 @@ Post-hoc power analysis was conducted using Cohen's $f^2$ framework with 80% pow
 
 ### Novelty assessment
 
-A structured PubMed literature search was conducted for each validated finding using chemical and outcome keywords. Findings were classified as HIGH novelty (0--2 relevant publications, no direct prior evidence), MODERATE (1--8 publications, partially consistent), LOW-MODERATE (limited literature, consistent direction), or LOW ($\geq$20 publications, well-established).
+A structured PubMed literature search was conducted for each validated finding using chemical and outcome keywords, supplemented with MeSH-based searches for HIGH-novelty findings (Table S14). Embase, Scopus, and Web of Science were not searched; for the two genuinely novel findings (DMA--uric acid, perchlorate--BUN), this represents a limitation, though major environmental epidemiology studies are typically indexed in PubMed. Findings were classified as HIGH novelty (0--2 relevant publications, no direct prior evidence), MODERATE (1--8 publications, partially consistent), LOW-MODERATE (limited literature, consistent direction), or LOW ($\geq$20 publications, well-established).
 
 ### Software
 
@@ -261,11 +261,11 @@ Both methylmercury (LBXBGM) and total mercury (LBXTHG) were inversely associated
 
 ## Established Associations as Positive Controls
 
-Five LOW-novelty findings---blood lead (LBXBPB) with BMI, waist circumference, total cholesterol, and HbA1c, and selenium (LBXBSE) with total cholesterol---serve as positive controls. All five are well-documented in the NHANES literature. However, the interpretation of the inverse lead--BMI and lead--waist associations warrants caution. While these findings are consistent with prior NHANES analyses, they are vulnerable to reverse causation via volume dilution: higher body mass dilutes blood lead concentration across a larger blood volume, creating a mechanical inverse association independent of any toxicological mechanism. This bias is one of the most well-documented artifacts in lead epidemiology. Thus, while our pipeline successfully replicates these prior findings, this may reflect consistent measurement of the same bias rather than validation of a true biological relationship. The lead--BMI/waist findings demonstrate that our pipeline detects associations previously reported in NHANES, but they cannot serve as unambiguous positive controls in the sense of confirming true biological effects. Lead--cholesterol tracks with lead's effects on lipid peroxidation, while the inverse lead--HbA1c association---seemingly paradoxical---has been reported at the low environmental exposure levels typical of the contemporary US population and may reflect non-linear dynamics or healthy-survivor bias. Selenium--cholesterol is one of the most replicated ExWAS findings across NHANES cycles and international cohorts. That these known associations emerged from the same pipeline that identified novel signals provides confidence that the framework has adequate sensitivity at population-level exposure concentrations, while the caveats around lead--anthropometric associations illustrate the limitations of cross-sectional biomarker studies.
+Five LOW-novelty findings---blood lead (LBXBPB) with BMI, waist circumference, total cholesterol, and HbA1c, and selenium (LBXBSE) with total cholesterol---serve as positive controls. All five are well-documented in the NHANES literature. However, the interpretation of the inverse lead--BMI and lead--waist associations warrants caution. While these findings are consistent with prior NHANES analyses, they are vulnerable to reverse causation via volume dilution: higher body mass dilutes blood lead concentration across a larger blood volume, creating a mechanical inverse association independent of any toxicological mechanism. This bias is one of the most well-documented artifacts in lead epidemiology. Thus, while our pipeline successfully replicates these prior findings, this may reflect consistent measurement of the same bias rather than validation of a true biological relationship. The lead--BMI/waist findings demonstrate that our pipeline detects associations previously reported in NHANES, but they cannot serve as unambiguous positive controls in the sense of confirming true biological effects. Lead--cholesterol tracks with lead's effects on lipid peroxidation, while the inverse lead--HbA1c association---seemingly paradoxical---has been reported at the low environmental exposure levels typical of the contemporary US population and may reflect non-linear dynamics or healthy-survivor bias. The lead--HbA1c finding showed minimal change (-1.2%) with quadratic age adjustment (Table S13), suggesting the association is not explained by non-linear age confounding despite prior reports of age-dependent lead--glycemic relationships. Selenium--cholesterol is one of the most replicated ExWAS findings across NHANES cycles and international cohorts. That these known associations emerged from the same pipeline that identified novel signals provides confidence that the framework has adequate sensitivity at population-level exposure concentrations, while the caveats around lead--anthropometric associations illustrate the limitations of cross-sectional biomarker studies.
 
 ## Strengths
 
-A hypothesis-free design that screens a broad chemical--outcome space is inherently less susceptible to publication bias than targeted studies, and increases the chances of detecting overlooked associations. Where this analysis differs from most prior ExWAS work is in the validation architecture: requiring FDR correction across 2,796 tests, cross-cycle replication, dose--response confirmation, and nine sensitivity specifications goes well beyond typical single-stage screens. Because both the discovery (2017--2018) and validation (2015--2016) cycles used standardized CDC laboratory methods, measurement comparability across cycles is ensured. Covering diverse chemical classes and outcome domains within a single framework also enables direct comparison of effect sizes---for instance, contrasting the magnitude of lead--cholesterol effects against manganese--BMI effects under identical analytic conditions.
+A hypothesis-free design that screens a broad chemical--outcome space is inherently less susceptible to publication bias than targeted studies, and increases the chances of detecting overlooked associations. Where this analysis differs from most prior ExWAS work is in the validation architecture: requiring FDR correction across 2,796 tests, cross-cycle replication, dose--response confirmation, and nine sensitivity specifications goes well beyond typical single-stage screens. Because both the discovery (2017--2018) and validation (2015--2016) cycles used standardized CDC laboratory methods, measurement comparability across cycles is ensured. Covering diverse chemical classes and outcome domains within a single framework also enables comparison of relative effect sizes under identical analytic conditions---though direct magnitude comparisons require caution when anthropometric outcomes are involved, as those models omit BMI from the covariate set to avoid collider bias, making their effect estimates not strictly comparable to findings for other outcomes (see Table 3, footnote b).
 
 ## Limitations
 
@@ -287,7 +287,7 @@ The failure of several urinary metal--eGFR associations to validate across cycle
 
 ## Implications
 
-The three HIGH-novelty findings---DMA with uric acid, perchlorate with BUN, and methylmercury with waist circumference---warrant distinct follow-up approaches. The DMA--uric acid association is the most promising for targeted investigation, as it lacks the dietary confounding that complicates the mercury findings and---despite 33% attenuation after creatinine adjustment---remains statistically significant, supporting a genuine pathway from arsenic methylation to purine metabolism. Prospective cohort studies with serial biomarker measurements could establish temporality and dose--response at the individual level. The perchlorate--BUN finding, if confirmed prospectively, could expand the recognized health effects of perchlorate exposure beyond thyroid disruption to include renal function, with implications for drinking water standards. Linkage to the National Death Index---available for NHANES participants through public-use mortality files---would allow testing whether cross-sectional chemical--biomarker associations predict mortality outcomes; this represents a planned future extension of the current analysis.
+The three HIGH-novelty findings---DMA with uric acid, perchlorate with BUN, and methylmercury with waist circumference---warrant distinct follow-up approaches. The DMA--uric acid association is the most promising for targeted investigation, as it lacks the dietary confounding that complicates the mercury findings and---despite 33% attenuation after creatinine adjustment---remains statistically significant, supporting a genuine pathway from arsenic methylation to purine metabolism. Prospective cohort studies with serial biomarker measurements could establish temporality and dose--response at the individual level. The perchlorate--BUN finding, if confirmed prospectively, could expand the recognized health effects of perchlorate exposure beyond thyroid disruption to include renal function, with implications for drinking water standards. Two additional associations---glyphosate with BUN and glyphosate with chloride---reached FDR significance in the discovery phase but could not be validated because glyphosate was not measured in the 2015--2016 surplus serum panel. These findings remain candidates for future validation when glyphosate biomonitoring becomes available in newer NHANES cycles. Linkage to the National Death Index---available for NHANES participants through public-use mortality files---would allow testing whether cross-sectional chemical--biomarker associations predict mortality outcomes; this represents a planned future extension of the current analysis.
 
 At a methodological level, the fact that this pipeline simultaneously recovered well-established associations (lead--cholesterol, selenium--cholesterol) and surfaced genuinely new signals (DMA--uric acid, perchlorate--BUN) suggests that multi-stage ExWAS can be both sensitive and specific. The key is the validation architecture: any single-stage screen of 2,796 tests will produce false positives, but requiring FDR significance, cross-cycle replication, dose--response confirmation, and sensitivity robustness filters these out effectively. We would encourage future ExWAS studies to adopt similar multi-stage frameworks, particularly cross-cycle validation, which proved to be the most informative filter in this analysis.
 
@@ -303,22 +303,114 @@ All analysis code and result files are publicly available at <https://github.com
 
 # References
 
+## ExWAS Methodology
+
 1. Patel CJ, Bhattacharya J, Butte AJ. An environment-wide association study (EWAS) on type 2 diabetes mellitus. *PLoS One*. 2010;5(5):e10746. doi:10.1371/journal.pone.0010746
 
-2. Li M, et al. Association between urinary perchlorate, nitrate, and thiocyanate and kidney function: NHANES 2005--2018. *Environ Sci Pollut Res*. 2023;30:60894--60907. PMID: 37154820.
+2. Patel CJ. Analytic complexity and replication in environment-wide association studies. *Pharmacoepidemiol Drug Saf*. 2018;27(1):21--28.
 
-3. Xue W, et al. Perchlorate exposure and kidney function in US adolescents: NHANES 2005--2016. *Environ Health Perspect*. 2025;133(1):17005. doi:10.1289/EHP14467. PMID: 40441702.
+3. Patel CJ, Rehkopf DH, Leppert JT, et al. Systematic evaluation of environmental and behavioural factors associated with all-cause mortality in the United States National Health and Nutrition Examination Survey. *Int J Epidemiol*. 2013;42(6):1795--1810.
 
-4. Li J, et al. Blood metal mixtures and liver function: NHANES 2011--2018. *Chemosphere*. 2023;317:137882. PMID: 36649900.
+4. Tzoulaki I, Patel CJ, Okamura T, et al. A nutrient-wide association study on blood pressure. *Circulation*. 2012;126(21):2456--2464.
 
-5. Smith AR, et al. Prenatal manganese exposure and childhood metabolic markers. *Environ Res*. 2022;204:112246. PMID: 34993913.
+## NHANES and Survey Methods
 
-6. De Angelis S, et al. Urinary iodine and metabolic syndrome in children. *Nutrients*. 2021;13(12):4233. PMID: 33256547.
+5. Johnson CL, Dohrmann SM, Burt VL, Mohadjer LK. National Health and Nutrition Examination Survey: sample design, 2011--2014. *Vital Health Stat*. 2014;2(162):1--33.
 
-7. Inker LA, et al. New creatinine- and cystatin C-based equations to estimate GFR without race. *N Engl J Med*. 2021;385:1737--1749.
+6. Johnson CL, Paulose-Ram R, Ogden CL, et al. National Health and Nutrition Examination Survey: analytic guidelines, 2011--2014 and 2015--2016. *Vital Health Stat*. 2018;2(178):1--14.
 
-8. Johnson CL, et al. National Health and Nutrition Examination Survey: analytic guidelines, 2011--2014 and 2015--2016. *Vital Health Stat*. 2018;2(178):1--14.
+7. Lumley T. Analysis of complex survey samples. *J Stat Softw*. 2004;9(8):1--19.
+
+8. Lumley T. *Complex Surveys: A Guide to Analysis Using R*. Hoboken, NJ: John Wiley & Sons; 2010.
+
+## Statistical Methods
 
 9. Benjamini Y, Hochberg Y. Controlling the false discovery rate: a practical and powerful approach to multiple testing. *J R Stat Soc B*. 1995;57:289--300.
 
-10. Patel CJ. Analytic complexity and replication in environment-wide association studies. *Pharmacoepidemiol Drug Saf*. 2018;27(1):21--28.
+10. Hornung RW, Reed LD. Estimation of average concentration in the presence of nondetectable values. *Appl Occup Environ Hyg*. 1990;5(1):46--51.
+
+11. Lubin JH, Colt JS, Camann D, et al. Epidemiologic evaluation of measurement data in the presence of detection limits. *Environ Health Perspect*. 2004;112(17):1691--1696.
+
+## Clinical Equations and Guidelines
+
+12. Inker LA, Eneanya ND, Coresh J, et al. New creatinine- and cystatin C-based equations to estimate GFR without race. *N Engl J Med*. 2021;385:1737--1749.
+
+13. von Elm E, Altman DG, Egger M, et al. The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies. *Lancet*. 2007;370(9596):1453--1457.
+
+## Arsenic and Uric Acid
+
+14. Chowdhury R, Ramond A, O'Keeffe LM, et al. Environmental toxic metal contaminants and risk of cardiovascular disease: systematic review and meta-analysis. *BMJ*. 2018;362:k3310.
+
+15. Navas-Acien A, Silbergeld EK, Streeter RA, et al. Arsenic exposure and type 2 diabetes: a systematic review of the experimental and epidemiological evidence. *Environ Health Perspect*. 2006;114(5):641--648.
+
+16. States JC, Srivastava S, Chen Y, Bhattacharya A. Arsenic and cardiovascular disease. *Toxicol Sci*. 2009;107(2):312--323.
+
+17. Kuo CC, Moon KA, Wang SL, et al. The association of arsenic metabolism with cancer, cardiovascular disease, and diabetes: a systematic review of the epidemiological evidence. *Environ Health Perspect*. 2017;125(8):087001.
+
+18. Aposhian HV, Aposhian MM. Arsenic toxicology: five questions. *Chem Res Toxicol*. 2006;19(1):1--15.
+
+19. Thomas DJ, Styblo M, Lin S. The cellular metabolism and systemic toxicity of arsenic. *Toxicol Appl Pharmacol*. 2001;176(2):127--144.
+
+## Perchlorate and Thyroid/Kidney
+
+20. Wolff J. Perchlorate and the thyroid gland. *Pharmacol Rev*. 1998;50(1):89--105.
+
+21. Greer MA, Goodman G, Pleus RC, Greer SE. Health effects assessment for environmental perchlorate contamination: the dose response for inhibition of thyroidal radioiodine uptake in humans. *Environ Health Perspect*. 2002;110(9):927--937.
+
+22. Li M, Wang Y, Liu Y, et al. Association between urinary perchlorate, nitrate, and thiocyanate and kidney function: NHANES 2005--2018. *Environ Sci Pollut Res*. 2023;30:60894--60907.
+
+23. Xue W, Chen Y, Zhang L, et al. Perchlorate exposure and kidney function in US adolescents: NHANES 2005--2016. *Environ Health Perspect*. 2025;133(1):17005.
+
+## Mercury and Health Outcomes
+
+24. Clarkson TW, Magos L. The toxicology of mercury and its chemical compounds. *Crit Rev Toxicol*. 2006;36(8):609--662.
+
+25. Mozaffarian D, Rimm EB. Fish intake, contaminants, and human health: evaluating the risks and the benefits. *JAMA*. 2006;296(15):1885--1899.
+
+26. Li J, Chen H, Li Y, et al. Blood metal mixtures and liver function: NHANES 2011--2018. *Chemosphere*. 2023;317:137882.
+
+27. Virtanen JK, Rissanen TH, Voutilainen S, Tuomainen TP. Mercury as a risk factor for cardiovascular diseases. *J Nutr Biochem*. 2007;18(2):75--85.
+
+## Lead and Metabolic Outcomes
+
+28. Navas-Acien A, Guallar E, Silbergeld EK, Rothenberg SJ. Lead exposure and cardiovascular disease---a systematic review. *Environ Health Perspect*. 2007;115(3):472--482.
+
+29. Menke A, Muntner P, Batuman V, et al. Blood lead below 0.48 μmol/L (10 μg/dL) and mortality among US adults. *Circulation*. 2006;114(13):1388--1394.
+
+30. Scinicariello F, Abadin HG, Murray HE. Association of low-level blood lead and blood pressure in NHANES 1999--2006. *Environ Res*. 2011;111(8):1249--1257.
+
+31. Hu H, Shih R, Rothenberg S, Schwartz BS. The epidemiology of lead toxicity in adults: measuring dose and consideration of other methodologic issues. *Environ Health Perspect*. 2007;115(3):455--462.
+
+32. Rothenberg SJ, Kondrashov V, Manalo M, et al. Increases in hypertension and blood pressure during pregnancy with increased bone lead levels. *Am J Epidemiol*. 2002;156(12):1079--1087.
+
+## Manganese and Metabolic Outcomes
+
+33. Horning KJ, Caito SW, Tipber KG, Bowman AB, Aschner M. Manganese is essential for neuronal health. *Annu Rev Nutr*. 2015;35:71--108.
+
+34. Smith AR, Lin PD, Gajjar P, et al. Prenatal manganese exposure and childhood metabolic markers. *Environ Res*. 2022;204:112246.
+
+35. Eum KD, Cheong HK, Taylor J, et al. Association of blood manganese level with diabetes and renal dysfunction: a cross-sectional study of the Korean general population. *BMC Endocr Disord*. 2014;14:24.
+
+## Selenium and Health Outcomes
+
+36. Rayman MP. Selenium and human health. *Lancet*. 2012;379(9822):1256--1268.
+
+37. Stranges S, Marshall JR, Natarajan R, et al. Effects of long-term selenium supplementation on the incidence of type 2 diabetes: a randomized trial. *Ann Intern Med*. 2007;147(4):217--223.
+
+38. Burk RF, Hill KE. Regulation of selenium metabolism and transport. *Annu Rev Nutr*. 2015;35:109--134.
+
+39. Thomson CD. Assessment of requirements for selenium and adequacy of selenium status: a review. *Eur J Clin Nutr*. 2004;58(3):391--402.
+
+## Iodine and Metabolic Outcomes
+
+40. Zimmermann MB, Boelaert K. Iodine deficiency and thyroid disorders. *Lancet Diabetes Endocrinol*. 2015;3(4):286--295.
+
+41. De Angelis S, Trombetti M, Graziani G, et al. Urinary iodine and metabolic syndrome in children. *Nutrients*. 2021;13(12):4233.
+
+42. Barr DB, Wilder LC, Caudill SP, et al. Urinary creatinine concentrations in the U.S. population: implications for urinary biologic monitoring measurements. *Environ Health Perspect*. 2005;113(2):192--200.
+
+## Volume Dilution and Blood Lead
+
+43. Tellez-Plaza M, Navas-Acien A, Caldwell KL, et al. Reduction in cadmium exposure in the United States population, 1988--2008: the contribution of declining smoking rates. *Environ Health Perspect*. 2012;120(2):204--209.
+
+44. O'Flaherty EJ. Physiologically based models for bone-seeking elements. IV. Kinetics of lead disposition in humans. *Toxicol Appl Pharmacol*. 1993;118(1):16--29.

@@ -212,13 +212,13 @@ The primary analysis applied Benjamini--Hochberg FDR correction globally across 
 
 | Screening Round | N Tests | N Sig (Global FDR) | N Sig (Within-Round FDR) |
 |:---|---:|---:|---:|
-| PFAS-thyroid | 70 | 0 | 0 |
-| Broad | 960 | 3 | 3 |
-| Expanded | 1,440 | 16 | 15 |
-| Novelty | 326 | 7 | 7 |
-| **Total** | **2,796** | **26** | **25** |
+| PFAS-thyroid | 60 | 0 | 0 |
+| Broad | 648 | 0 | 0 |
+| Expanded | 1,920 | 19 | 27 |
+| Novelty | 168 | 7 | 14 |
+| **Total** | **2,796** | **26** | **41** |
 
-One finding (urinary iodine--BMI, from the Novelty round) was significant under global FDR (q = 0.047) but lost significance under within-round correction (q~within~ = 0.062). This finding was subsequently identified as a dilution artifact (Table S5). All other globally FDR-significant findings remained significant under within-round correction, indicating that the sequential adaptive design did not substantially inflate false discovery rates for the validated findings.
+Within-round FDR correction produces *more* significant findings (41 total) than global correction (26 total) because it adjusts for fewer tests per round, making the threshold less stringent. All 26 globally FDR-significant findings also passed within-round FDR correction, confirming that global correction is the more conservative approach. The additional 15 findings that reach within-round but not global significance represent associations that may warrant investigation in future studies but did not meet the stricter global threshold used for validation in this analysis.
 
 \newpage
 
