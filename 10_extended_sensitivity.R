@@ -79,10 +79,10 @@ tryCatch({
   for (i in seq_len(nrow(mercury_findings))) {
     exp_var <- mercury_findings$exposure[i]
     out_var <- mercury_findings$outcome[i]
-    beta_orig <- mercury_findings$beta[i]
+    beta_orig <- mercury_findings$beta_primary[i]
 
     # Get appropriate weight
-    weight_var <- select_weight(exp_var)
+    weight_var <- select_weight(exp_var, dat_fish)
 
     # Build data for this analysis
     model_vars <- c(exp_var, out_var, "RIDAGEYR", "female", "race3",
@@ -177,9 +177,9 @@ quad_age_results <- list()
 for (i in seq_len(nrow(validated))) {
   exp_var <- validated$exposure[i]
   out_var <- validated$outcome[i]
-  beta_orig <- validated$beta[i]
+  beta_orig <- validated$beta_primary[i]
 
-  weight_var <- select_weight(exp_var)
+  weight_var <- select_weight(exp_var, dat)
 
   # Build data
   model_vars <- c(exp_var, out_var, "RIDAGEYR", "female", "race3",
