@@ -22,9 +22,9 @@ source("04_dose_response.R")          # Quartile dose-response for validated fin
 source("05_sensitivity_analyses.R")   # 9 robustness specifications per finding
 source("06_figures_tables.R")         # All figures + Tables 1-3
 source("07_novelty_assessment.R")     # PubMed literature search + novelty classification
-source("09_additional_analyses.R")    # All sensitivity: fish/PA/alcohol/creatinine/protein, 6-level race, within-round FDR, LOD, STROBE
-source("10_extended_sensitivity.R")   # 24h dietary fish, quadratic age, standardized volcano, DAG, systematic novelty search
-source("11_supplementary_sensitivity.R")  # eGFR-adjusted perchlorate-BUN, E-values, alcohol direction verification
+source("08_additional_analyses.R")    # All sensitivity: fish/PA/alcohol/creatinine/protein, 6-level race, within-round FDR, LOD, STROBE
+source("09_extended_sensitivity.R")   # 24h dietary fish, quadratic age, standardized volcano, DAG, systematic novelty search
+source("10_supplementary_sensitivity.R")  # eGFR-adjusted perchlorate-BUN, E-values, alcohol direction verification
 ```
 
 Required packages: `nhanesA`, `survey`, `tidyverse`, `broom`, `ggrepel`, `forestplot`, `pheatmap`, `kableExtra`, `tableone`, `knitr`, `rmarkdown`. Script `00_functions.R` auto-installs missing packages.
@@ -46,11 +46,11 @@ Required packages: `nhanesA`, `survey`, `tidyverse`, `broom`, `ggrepel`, `forest
     ↓
 06 → figures/ (PDFs, PNGs, table CSVs)
     ↓
-09 → fish/PA/alcohol/creatinine sensitivity, power, within-round FDR, LOD, STROBE
+08 → fish/PA/alcohol/creatinine sensitivity, power, within-round FDR, LOD, STROBE
     ↓
-10 → 24h fish adjustment, quadratic age, standardized volcano, DAG, novelty search
+09 → 24h fish adjustment, quadratic age, standardized volcano, DAG, novelty search
     ↓
-11 → eGFR-adjusted perchlorate-BUN (Table S15), E-values, alcohol direction check
+10 → eGFR-adjusted perchlorate-BUN (Table S15), E-values, alcohol direction check
 ```
 
 ### Key Components in `00_functions.R`
