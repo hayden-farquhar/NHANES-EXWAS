@@ -40,9 +40,9 @@ Survey-weighted linear regression of log-transformed chemical biomarker on healt
 
 \newpage
 
-# Table S2. Dose--Response Quartile Analysis for 15 Validated Findings
+# Table S2. Dose--Response Quartile Analysis for 15 Initially Validated Findings
 
-Survey-weighted adjusted mean differences in outcome relative to the lowest exposure quartile (Q1, reference). P~trend~ from linear contrast across quartile midpoints.
+Survey-weighted adjusted mean differences in outcome relative to the lowest exposure quartile (Q1, reference). P~trend~ from linear contrast across quartile midpoints. Note: Urinary iodine--BMI was subsequently identified as a dilution artifact after creatinine adjustment (see Table S5); the final count of robustly validated findings is 14.
 
 | Chemical | Outcome | Q2 $\beta$ | Q3 $\beta$ | Q4 $\beta$ | P~trend~ | Monotonic | N |
 |:---|:---|---:|---:|---:|:---|:---:|---:|
@@ -64,9 +64,9 @@ Survey-weighted adjusted mean differences in outcome relative to the lowest expo
 
 \newpage
 
-# Table S3. Sensitivity Analysis Summary for 15 Validated Findings
+# Table S3. Sensitivity Analysis Summary for 15 Initially Validated Findings
 
-Each finding was tested under 9 specifications: (1) primary model, (2) females only, (3) males only, (4) age < 50, (5) age $\geq$ 50, (6) excluding outliers > 99th percentile, (7) adjusting for education, (8) cotinine instead of binary smoking, and (9) adults aged 20+ only. A finding is "robust" if $\geq$ 7 of 9 specifications show concordant direction and p < 0.05.
+Each finding was tested under 9 specifications: (1) primary model, (2) females only, (3) males only, (4) age < 50, (5) age $\geq$ 50, (6) excluding outliers > 99th percentile, (7) adjusting for education, (8) cotinine instead of binary smoking, and (9) adults aged 20+ only. A finding is "robust" if $\geq$ 7 of 9 specifications show concordant direction and p < 0.05. Note: Urinary iodine--BMI was subsequently identified as a dilution artifact after creatinine adjustment (see Table S5); the final count of robustly validated findings is 14.
 
 | Chemical | Outcome | Dir. Match | Sig. (p<0.05) | Median % $\Delta\beta$ | Robust |
 |:---|:---|:---:|:---:|---:|:---:|
@@ -138,11 +138,11 @@ Effect estimates ($\beta$), standard errors, and p-values for each of the 9 sens
 
 # Table S5. Additional Sensitivity Analyses
 
-Four additional sensitivity specifications were applied to assess specific confounding concerns. Fish consumption (DBD895, number of fish/shellfish meals in 30 days) and physical activity (PAQ_J) were tested for all 15 validated findings. Alcohol consumption (ALQ_J) could not be assessed due to extensive missing data from NHANES skip patterns. Urinary creatinine adjustment (log-transformed) was applied to the three urinary biomarker associations to address dilution variation.
+Four additional sensitivity specifications were applied to assess specific confounding concerns. Fish consumption frequency (DBD895, number of fish/shellfish meals in 30 days) and physical activity (PAQ_J) were tested for all 15 initially validated findings. Alcohol consumption (ALQ_J) was assessed in the subset of participants with complete alcohol data (n = 3,143 for blood biomarkers, n = 1,035 for urinary subsample); all 15 findings remained significant with median absolute effect change of 2.4%. Urinary creatinine adjustment (log-transformed) was applied to the three urinary biomarker associations to address dilution variation; this analysis identified urinary iodine--BMI as a dilution artifact (see main text Section 3.4).
 
 ## Fish consumption and physical activity adjustment
 
-Adjustment for fish consumption did not materially change any of the 15 validated findings (all $|\Delta\beta|$ < 1%). Physical activity adjustment likewise produced no change ($|\Delta\beta|$ < 0.01% for all findings). These results are consistent across all 15 associations and indicate that the primary findings are not confounded by fish intake frequency or recreational physical activity level.
+Adjustment for self-reported fish consumption frequency (DBD895, number of fish/shellfish meals in 30 days) did not materially change any of the 15 initially validated findings (all $|\Delta\beta|$ < 1%). For mercury findings specifically, an additional sensitivity analysis using 24-hour dietary recall fish consumption (grams consumed) is presented in Table S12, which also showed minimal change ($|\Delta\beta|$ < 1%). Physical activity adjustment likewise produced no change ($|\Delta\beta|$ < 0.01% for all findings). These results are consistent across all 15 associations and indicate that the primary findings are not confounded by fish intake frequency or recreational physical activity level.
 
 ## Urinary creatinine adjustment
 
@@ -162,7 +162,7 @@ Forest plots showing the effect estimate ($\beta$) and 95% confidence interval f
 
 ## HIGH Novelty
 
-![Figure S1. Sensitivity analysis: DMA (urinary) -- Uric acid.](figures/fig5_sensitivity_Dimethylarsonic_acid__urinary_____Uric_acid.png)
+![ Sensitivity analysis: DMA (urinary) -- Uric acid.](figures/fig5_sensitivity_Dimethylarsonic_acid__urinary_____Uric_acid.png)
 
 ![Figure S2. Sensitivity analysis: Urinary perchlorate -- BUN.](figures/fig5_sensitivity_Urinary_perchlorate____BUN.png)
 
@@ -323,7 +323,7 @@ These represent small effects (Cohen's $f^2$ < 0.02 for blood biomarkers), confi
 | 19 | Discuss limitations | Discussion -- Limitations |
 | 20 | Give cautious overall interpretation | Discussion ¶6--7 |
 | 21 | Discuss generalizability | Discussion ¶2--3 |
-| 22 | Give source of funding and role of funders | N/A (unfunded study) |
+| 22 | Give source of funding and role of funders | Funding section (unfunded) |
 
 \newpage
 
@@ -343,7 +343,7 @@ All three mercury findings remained essentially unchanged after adjustment for 2
 
 # Table S13. Quadratic Age Sensitivity Analysis
 
-To assess whether non-linear age effects confound the primary findings, models were re-run with a quadratic age term (age + age²) in addition to all primary covariates. All 15 validated findings were tested.
+To assess whether non-linear age effects confound the primary findings, models were re-run with a quadratic age term (age + age²) in addition to all primary covariates. All 15 initially validated findings were tested. Note: Urinary iodine--BMI was subsequently identified as a dilution artifact; final count is 14 robustly validated findings.
 
 | Chemical | Outcome | $\beta$ (Quadratic) | SE | P-value | $\beta$ (Primary) | $\Delta\beta$ (%) | Dir. Match | Age² $\beta$ | Age² P | N |
 |:---|:---|---:|---:|:---|---:|---:|:---:|---:|:---|---:|

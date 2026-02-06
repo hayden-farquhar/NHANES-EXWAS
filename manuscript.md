@@ -8,7 +8,7 @@ abstract: |
 
   **Methods:** We screened 92 chemical biomarkers against 48 health outcomes in NHANES 2017--2018 (2,796 tests). Associations passing an initial FDR screen were subjected to cross-cycle validation in NHANES 2015--2016---the primary inferential safeguard given the adaptive screening design---followed by dose--response analysis and multiple sensitivity specifications. Survey-weighted regression models adjusted for age, sex, race/ethnicity, poverty--income ratio, BMI, and smoking.
 
-  **Results:** We identified 14 robustly validated chemical--health associations that survived FDR correction, cross-cycle replication (71% of testable associations), dose--response analysis, and analyte-specific sensitivity checks. Urinary creatinine adjustment identified one initially validated association (iodine--BMI) as a dilution artifact. Two novel findings emerged: dimethylarsonic acid with uric acid ($\beta$ = 0.20 mg/dL per log-unit DMA, 95% CI: 0.15--0.26) and urinary perchlorate with BUN ($\beta$ = 1.21 mg/dL per log-unit perchlorate, 95% CI: 0.97--1.45); a third high-novelty association (methylmercury--waist circumference) is likely explained by fish consumption patterns.
+  **Results:** Of 26 associations passing FDR correction, 21 were testable in cross-cycle validation; of these, 15 (71%) replicated with concordant direction and p < 0.05 in an independent NHANES 2015--2016 sample. Of these 15, 14 remained robust after analyte-specific sensitivity checks; urinary creatinine adjustment identified one association (iodine--BMI) as a dilution artifact. Two novel findings emerged: dimethylarsonic acid with uric acid ($\beta$ = 0.20 mg/dL per log-unit DMA, 95% CI: 0.15--0.26) and urinary perchlorate with BUN ($\beta$ = 1.21 mg/dL per log-unit perchlorate, 95% CI: 0.97--1.45); a third high-novelty association (methylmercury--waist circumference) is likely explained by fish consumption patterns.
 
   **Conclusions:** Multi-stage ExWAS with cross-cycle validation identified 14 robust chemical--health associations. Two novel findings---DMA--uric acid and perchlorate--BUN---survived all sensitivity checks and warrant prospective investigation.
 ---
@@ -17,7 +17,7 @@ abstract: |
 
 **NHANES variable names used in text:** LBXBGM, blood methylmercury; LBXBMN, blood manganese; LBXBPB, blood lead; LBXBSE, blood selenium; LBXCOT, serum cotinine; LBXRBCSI, RBC count; LBXSAPSI, serum alkaline phosphatase; LBXSUA, serum uric acid; LBXTHG, total blood mercury; BMXWAIST, waist circumference; URXUDMA, urinary dimethylarsonic acid; URXUIO, urinary iodine; URXUP8, urinary perchlorate. Survey weights: WTMEC2YR (MEC exam, blood biomarkers), WTSA2YR (urinary subsample A), WTSSBJ2Y (surplus serum).
 
-# 1. Introduction
+# Introduction
 
 Environmental chemical exposures are ubiquitous in the general population and have been implicated in a broad spectrum of adverse health outcomes, from metabolic and cardiovascular disease to neurodevelopmental and reproductive disorders. However, most environmental epidemiology studies adopt a hypothesis-driven approach, testing one or a small number of pre-specified chemical--outcome pairs. This limits the ability to detect unexpected associations and introduces publication bias favoring positive results for well-studied chemicals.
 
@@ -29,9 +29,9 @@ Despite this resource, most published ExWAS analyses have been limited in scope,
 
 We conducted a comprehensive ExWAS using NHANES 2017--2018, screening 2,796 exposure--outcome combinations across 92 chemical biomarkers and 48 health outcomes. Findings that survived false discovery rate correction were subjected to a four-stage validation pipeline: (1) cross-cycle replication in NHANES 2015--2016, (2) quartile-based dose--response analysis, (3) nine sensitivity specifications testing robustness to analytic decisions, and (4) structured literature review for novelty assessment. This multi-stage approach minimizes the risk of false positives inherent to high-dimensional screening while identifying genuinely novel associations for targeted follow-up.
 
-# 2. Methods
+# Methods
 
-## 2.1 Study Population
+## Study Population
 
 We used data from the National Health and Nutrition Examination Survey (NHANES) 2017--2018 cycle, a nationally representative, cross-sectional survey of the non-institutionalized civilian US population conducted by the National Center for Health Statistics (NCHS). NHANES employs a complex, multistage probability sampling design with oversampling of certain demographic groups. All participants provided written informed consent, and the protocol was approved by the NCHS Research Ethics Review Board. Our analysis was restricted to adults aged 18 years and older with valid survey weights and non-missing covariate data. Of the NHANES 2017--2018 participants examined at the mobile examination center, 5,265 adults met these inclusion criteria and formed the core analytic sample for blood-based biomarker analyses (WTMEC2YR weights). Urinary subsample A analyses were restricted to approximately 1,580--1,600 adults, and surplus serum analyses to approximately 1,370 adults, reflecting the smaller subsample designs of those NHANES components. This study was not pre-registered; the analysis is exploratory, consistent with the ExWAS paradigm, but employs a multi-stage validation architecture (FDR correction, cross-cycle replication, dose--response analysis, sensitivity specifications) designed to distinguish robust signals from statistical artifacts.
 
@@ -55,17 +55,17 @@ The analytic sample comprised approximately 4,800--5,300 participants depending 
 
 Note: Unweighted percentages reflect NHANES oversampling design; weighted estimates represent the US adult population.
 
-## 2.2 Chemical Exposure Biomarkers
+## Chemical Exposure Biomarkers
 
 We measured 92 chemical biomarkers spanning nine chemical classes: heavy metals (blood lead, cadmium, mercury, selenium, manganese, cobalt), per- and polyfluoroalkyl substances (PFAS; PFNA, PFHxS, PFDeA, PFUA), phthalate metabolites (MEHHP, MEOHP, MECPP, and others), polycyclic aromatic hydrocarbon (PAH) metabolites, volatile organic compound (VOC) metabolites, urinary metals and elements (iodine, perchlorate, cesium, thallium, arsenic species), pesticides (glyphosate, oxychlordane), and other environmental chemicals.
 
 All chemical concentrations were measured in NHANES laboratories following standardized protocols. Values below the limit of detection (LOD) were replaced with LOD/$\sqrt{2}$, a standard approach for left-censored environmental data. Chemicals with greater than 70% of values at or below the LOD were excluded from analysis due to insufficient variability for regression modeling. We used a 70% threshold rather than the more restrictive 40--50% cutoffs sometimes applied in single-chemical studies, in order to maximize the breadth of the chemical screen while excluding only chemicals whose exposure distributions would be dominated by the LOD/$\sqrt{2}$ pile-up. None of the 15 validated findings involved chemicals near this exclusion threshold, as the implicated biomarkers (blood lead, selenium, manganese, mercury, urinary DMA, perchlorate, iodine) all had detection frequencies exceeding 95%. Of the 92 chemicals screened, 12 had detection frequencies between 40--70%; excluding these would reduce the test count from 2,796 to 2,220 but does not change the FDR-significant findings (Table S9). All exposure biomarkers were natural-log-transformed prior to regression to reduce right skewness and improve model fit.
 
-## 2.3 Health Outcomes
+## Health Outcomes
 
 We examined 48 health outcomes across seven clinical domains: metabolic markers (total cholesterol, HDL, triglycerides, HbA1c, fasting glucose, uric acid), liver enzymes (ALT, AST, GGT, alkaline phosphatase [ALP], total bilirubin), kidney function (eGFR, blood urea nitrogen), hematological indices (RBC count, hemoglobin, WBC, platelets), anthropometric measures (BMI, waist circumference), cardiovascular (systolic and diastolic blood pressure), and mental health (PHQ-9 depression score). Estimated glomerular filtration rate (eGFR) was calculated using the race-free 2021 CKD-EPI equation (Inker et al., N Engl J Med 2021;385:1737-49).
 
-## 2.4 Statistical Analysis
+## Statistical Analysis
 
 ### Discovery phase
 
@@ -107,9 +107,9 @@ A structured PubMed literature search was conducted for each validated finding u
 
 All analyses were performed in R (version 4.3) using the `survey` package for complex survey regression, `nhanesA` for programmatic NHANES data access, `tidyverse` for data manipulation, and `broom` for model output extraction. Figures were generated with `ggplot2`, `ggrepel`, `forestplot`, and `pheatmap`. Analysis scripts and version details are available at <https://github.com/hayden-farquhar/NHANES-EXWAS>.
 
-# 3. Results
+# Results
 
-## 3.1 Discovery Phase
+## Discovery Phase
 
 We conducted 2,796 survey-weighted regression tests across four screening rounds, summarized below:
 
@@ -126,9 +126,9 @@ The strongest association was blood manganese (LBXBMN) positively associated wit
 
 Heavy metals dominated the significant findings (13 of 26 associations), followed by urinary metals/elements and phthalates. The most frequently implicated outcome domains were anthropometric, metabolic, and kidney function markers. Full results for all 26 FDR-significant associations are provided in Table S1. Note that many FDR-corrected q-values cluster at similar values (e.g., 0.024, 0.030); this is expected behavior of the Benjamini--Hochberg procedure, which assigns the same adjusted p-value to all tests sharing the same rank-order position relative to the FDR threshold.
 
-![Figure 1. Volcano plot of all 2,796 exposure--outcome associations. The x-axis shows unstandardized $\beta$ coefficients, which are not directly comparable across outcomes measured in different units; the plot is intended to show the distribution of effect directions and significance levels rather than relative effect magnitudes. Points above the dashed line exceed FDR < 0.05; labeled points identify the strongest signals by p-value. Standardized effect size (t/√n) and partial R² versions of this plot are provided in Figures S16--S17 for direct comparison of effect magnitudes across outcomes.](figures/fig1_volcano.png)
+![Volcano plot of all 2,796 exposure--outcome associations. The x-axis shows unstandardized $\beta$ coefficients, which are not directly comparable across outcomes measured in different units; the plot is intended to show the distribution of effect directions and significance levels rather than relative effect magnitudes. Points above the dashed line exceed FDR < 0.05; labeled points identify the strongest signals by p-value. Standardized effect size (t/√n) and partial R² versions of this plot are provided in Figures S16--S17 for direct comparison of effect magnitudes across outcomes.](figures/fig1_volcano.png)
 
-## 3.2 Cross-Cycle Validation
+## Cross-Cycle Validation
 
 The 26 FDR-significant associations from the discovery phase were advanced to cross-cycle validation in NHANES 2015--2016.
 
@@ -147,7 +147,7 @@ Validated associations included:
 
 Six associations failed validation, including blood manganese with RBC count (the Bonferroni-significant finding in 2017--2018 that showed a reversed direction in 2015--2016), and four urinary metal--eGFR associations (cesium, thallium, lead, cobalt), suggesting these kidney findings may be cycle-specific or susceptible to unmeasured confounding. An additional five associations could not be tested: two phthalate--bilirubin models failed to converge in the validation cycle, two glyphosate associations could not be tested because glyphosate was not measured in the 2015--2016 surplus serum panel, and one oxychlordane--eGFR association lacked the requisite exposure data. The 71% validation rate among testable associations compares favorably with prior ExWAS replication studies, which typically report 50--65% concordance across NHANES cycles.
 
-**Table 2. Cross-cycle validation results for all 26 FDR-significant associations.** 95% CIs are for discovery-phase estimates. ^a^Models for BMI and waist circumference outcomes omit BMI from the covariate set to avoid collider bias. ^b^Not testable: phthalate models failed to converge; glyphosate and oxychlordane not measured in 2015--2016.
+**Table 2. Cross-cycle validation results for all 26 FDR-significant associations.** 95% CIs are for discovery-phase estimates. ^a^Models for BMI and waist circumference outcomes omit BMI from the covariate set to avoid collider bias. ^b^Not testable: phthalate--bilirubin models failed to converge in the 2015--2016 cycle due to sparse data; glyphosate was not measured in the 2015--2016 surplus serum panel; oxychlordane data were not available in 2015--2016.
 
 | Chemical | Outcome | $\beta$ (2017--18) | 95% CI | $\beta$ (2015--16) | P (2015--16) | Validated |
 |:---|:---|---:|:---|---:|:---|:---:|
@@ -181,45 +181,45 @@ Six associations failed validation, including blood manganese with RBC count (th
 | *Glyphosate (serum)* | *Chloride* | *0.46* | *(0.32, 0.59)* | -- | -- | *Not testable*^b^ |
 | *Oxychlordane* | *eGFR* | *3.23* | *(2.39, 4.06)* | -- | -- | *Not testable*^b^ |
 
-![Figure 2. Forest plot of 21 testable FDR-significant associations showing discovery (2017--2018) and validation (2015--2016) estimates with 95% confidence intervals. Associations are ordered by validation p-value; the 15 that met validation criteria (concordant direction, p < 0.05) appear at the top.](figures/fig2_forest.png)
+![Forest plot of 21 testable FDR-significant associations showing discovery (2017--2018) and validation (2015--2016) estimates with 95% confidence intervals. Associations are ordered by validation p-value; the 15 that met validation criteria (concordant direction, p < 0.05) appear at the top.](figures/fig2_forest.png)
 
-## 3.3 Dose--Response Relationships
+## Dose--Response Relationships
 
 All 15 validated associations showed statistically significant dose--response trends in quartile analyses (p~trend~ range: 7.7 $\times$ 10^-5^ to 4.3 $\times$ 10^-3^). Of these, 14 exhibited monotonic dose--response gradients, with effect estimates increasing (or decreasing) consistently from the first to fourth quartile (Figure 3).
 
 The strongest dose--response gradient was observed for blood lead and total cholesterol: compared to the lowest quartile, mean total cholesterol was 5.2, 13.0, and 17.3 mg/dL higher in the second, third, and fourth quartiles, respectively (p~trend~ = 7.7 $\times$ 10^-5^). The single non-monotonic finding was urinary iodine with BMI, where the third quartile effect ($\beta$ = 1.95) was slightly lower than the second ($\beta$ = 2.17), although the overall trend remained significant (p~trend~ = 0.004) and the fourth quartile showed the largest effect ($\beta$ = 2.75).
 
-![Figure 3. Dose--response curves (quartile analysis) for 15 validated associations. Points represent survey-weighted adjusted mean differences relative to the lowest quartile.](figures/fig3_dose_response.png)
+![Dose--response curves (quartile analysis) for 15 validated associations. Points represent survey-weighted adjusted mean differences relative to the lowest quartile.](figures/fig3_dose_response.png)
 
-## 3.4 Sensitivity Analyses
+## Sensitivity Analyses
 
-All 15 of 15 validated findings were classified as robust, with concordant effect direction and nominal significance (p < 0.05) in at least 7 of 9 sensitivity specifications (Figure 4). The median absolute percent change in the $\beta$ coefficient across sensitivity analyses ranged from 0.7% (urinary iodine--BMI) to 13.1% (methylmercury--waist circumference), indicating that point estimates were generally stable across analytic choices.
+All 15 initially validated findings were classified as robust under the nine primary sensitivity specifications, with concordant effect direction and nominal significance (p < 0.05) in at least 7 of 9 specifications (Figure 4). The median absolute percent change in the $\beta$ coefficient ranged from 0.7% (urinary iodine--BMI) to 13.1% (methylmercury--waist circumference), indicating that point estimates were generally stable across analytic choices. However, analyte-specific sensitivity checks (described below) subsequently identified one association---urinary iodine--BMI---as a dilution artifact, reducing the count of robustly validated findings from 15 to 14.
 
 Effect estimates held up across sex-stratified and age-stratified subgroups, after exclusion of extreme outliers, with additional adjustment for education, and when substituting serum cotinine (LBXCOT) for the binary smoking indicator. None of the validated associations appeared driven by a single demographic subgroup or by influential outliers. Adding education as an additional covariate---a proxy for socioeconomic position beyond the poverty--income ratio already in the primary model---did not materially change any point estimate, which suggests the primary covariate set adequately captures socioeconomic confounding. Replacing self-reported smoking with continuous cotinine, an objective nicotine biomarker, likewise produced near-identical results; this rules out smoking misclassification as an explanation for any of the observed signals.
 
-![Figure 4. Chemical--outcome association heatmap showing signed $-\log_{10}$(p-value) for all nominally significant (p < 0.05) associations from the primary analysis. Rows represent chemical exposures (clustered by similarity); columns represent health outcomes (clustered by domain). Blue indicates positive associations; red indicates negative associations; color intensity reflects statistical significance. This figure displays the full association landscape; for sensitivity analysis results specific to the 15 validated findings, see Figures S1--S15.](figures/fig4_heatmap.pdf)
+![Chemical--outcome association heatmap showing signed $-\log_{10}$(p-value) for all nominally significant (p < 0.05) associations from the primary analysis. Rows represent chemical exposures (clustered by similarity); columns represent health outcomes (clustered by domain). Blue indicates positive associations; red indicates negative associations; color intensity reflects statistical significance. This figure displays the full association landscape; for sensitivity analysis results specific to the 15 initially validated findings (14 after excluding the iodine--BMI dilution artifact), see Figures S1--S15.](figures/fig4_heatmap.pdf)
 
 Individual sensitivity forest plots for each validated finding are provided in the Supplementary Materials (Figures S1--S15).
 
 ### Additional sensitivity analyses
 
-Four additional sensitivity specifications targeted specific confounding concerns (Table S5). Adjusting for fish consumption (DBD895) did not materially change any finding: all 15 estimates shifted less than 1%, including the methylmercury--waist circumference association ($\beta$ changed from -1.78 to -1.80, 0.8% increase) and both mercury--ALP associations. Physical activity adjustment (18.7% of participants met WHO guidelines for $\geq$150 minutes/week moderate-equivalent activity) similarly produced minimal change: all 15 findings remained significant with effect estimate changes less than 2%. Alcohol consumption adjustment was feasible for 3,143 blood biomarker participants and 1,035 urinary subsample participants with complete data; all 15 findings remained significant after alcohol adjustment, with median absolute effect estimate change of 2.4% (range: -11.6% to +3.2%). Effect estimates were predominantly attenuated (12 of 15 findings) rather than amplified, though the magnitude of changes was modest and no finding lost significance, suggesting alcohol is not a major confounder for these associations.
+Four additional sensitivity specifications targeted specific confounding concerns (Table S5). Adjusting for fish consumption frequency (DBD895, number of fish/shellfish meals in 30 days) did not materially change any of the 15 initially validated findings: all estimates shifted less than 1%, including the methylmercury--waist circumference association ($\beta$ changed from -1.78 to -1.80, 0.8% increase) and both mercury--ALP associations. Physical activity adjustment (18.7% of participants met WHO guidelines for $\geq$150 minutes/week moderate-equivalent activity) similarly produced minimal change: all 15 findings remained significant with effect estimate changes less than 2%. Alcohol consumption adjustment was feasible for 3,143 blood biomarker participants and 1,035 urinary subsample participants with complete data; all 15 findings remained significant after alcohol adjustment, with median absolute effect estimate change of 2.4% (range: -11.6% to +3.2%). For the two HIGH-novelty urinary findings in the alcohol-available subset (n ≈ 1,050), alcohol adjustment produced minimal change: DMA--uric acid $\beta$ = 0.211 (vs. 0.213 without alcohol, -0.9% change) and perchlorate--BUN $\beta$ = 1.39 (vs. 1.42 without alcohol, -2.4% change); both remained highly significant. Effect estimates were predominantly attenuated (12 of 15 findings) rather than amplified, though the magnitude of changes was modest and no finding lost significance, suggesting alcohol is not a major confounder for these associations.
 
 Urinary creatinine adjustment had important implications for the three urinary biomarker associations. Perchlorate--BUN was robust ($\beta$ changed from 1.21 to 1.22, +0.5%, p = 0.001). DMA--uric acid was attenuated by 33% ($\beta$ changed from 0.20 to 0.14) but remained statistically significant (p = 0.012), suggesting that urinary concentration partially but not fully explains this association. In contrast, the urinary iodine--BMI association was effectively eliminated by creatinine adjustment ($\beta$ changed from 1.18 to 0.40, -66%, p = 0.15), identifying it as a probable artifact of urinary dilution variation rather than a genuine exposure--outcome relationship. This reduces the count of robustly validated findings from 15 to 14.
 
-For the two HIGH-novelty urinary findings (DMA--uric acid and perchlorate--BUN), additional adjustment for dietary protein intake (24-hour recall mean = 79.5 g/day) was conducted because both uric acid and BUN are influenced by protein metabolism (Table S8). This analysis was restricted to participants with complete dietary recall data (N = 1,529 for DMA--uric acid vs. 1,593 in the primary analysis; N = 1,515 for perchlorate--BUN vs. 1,579 in the primary analysis). DMA--uric acid was attenuated by 12% ($\beta$: 0.20 $\rightarrow$ 0.18, p = 0.0008), while perchlorate--BUN showed 9% attenuation ($\beta$: 1.21 $\rightarrow$ 1.10, p = 0.0002). Both findings remained statistically significant after protein adjustment, indicating that dietary protein intake does not explain these associations.
+For the two HIGH-novelty urinary findings (DMA--uric acid and perchlorate--BUN), additional adjustment for dietary protein intake (24-hour recall mean = 79.5 g/day) was conducted because both uric acid and BUN are influenced by protein metabolism (Table S8). This analysis was restricted to participants with complete dietary recall data (N = 1,529 for DMA--uric acid vs. 1,593 in the primary analysis; N = 1,515 for perchlorate--BUN vs. 1,579 in the primary analysis). DMA--uric acid was attenuated by 12% ($\beta$: 0.202 $\rightarrow$ 0.178, p = 0.0008), while perchlorate--BUN showed 9% attenuation ($\beta$: 1.21 $\rightarrow$ 1.10, p = 0.0002). Both findings remained statistically significant after protein adjustment, indicating that dietary protein intake does not explain these associations.
 
 Sensitivity analysis using the full six-level NHANES RIDRETH3 race/ethnicity classification was conducted for 13 blood biomarker validated findings (Table S7). All 13 findings remained statistically significant (p < 0.0005) with the finer racial/ethnic categorization. Effect estimate changes were uniformly small, ranging from 0.0% (blood lead--HbA1c) to 1.8% (methylmercury--waist circumference and methylmercury--ALP), with a median absolute change of 0.3%. These minimal changes confirm that the three-level race categorization used in the primary analysis did not introduce meaningful confounding bias.
 
 The study was adequately powered to detect small effects: at the FDR-corrected significance level, the minimum detectable $R^2$ was 1.2% for blood biomarker analyses (effective n = 2,435), 3.6% for urinary subsample analyses (effective n = 790), and 4.2% for surplus serum analyses (effective n = 685). These thresholds are relevant for interpreting null findings (e.g., the PFAS--thyroid screen) but do not validate positive findings, which stand on cross-cycle replication. Full power analysis details are provided in Table S10.
 
-## 3.5 Novelty Assessment
+## Novelty Assessment
 
 Structured literature review classified the 15 validated findings into four novelty tiers (Table 3):
 
 **HIGH novelty (n = 3):** Three associations had no or minimal prior literature. (i) Dimethylarsonic acid (DMA) was positively associated with uric acid---no prior publications specifically examined this arsenic species--uric acid relationship, though broader arsenic--metabolic links have been reported. (ii) Urinary perchlorate was positively associated with BUN, with only two prior publications on perchlorate--kidney function, neither examining BUN in adults. (iii) Methylmercury was inversely associated with waist circumference, a finding with no prior publications but likely confounded by fish consumption.
 
-**MODERATE novelty (n = 5):** Five associations involved chemicals with emerging but limited evidence, including methylmercury with ALP, blood manganese with BMI and waist circumference, urinary iodine with BMI, and total mercury with ALP. (Note: the urinary iodine--BMI association was subsequently identified as a probable dilution artifact after creatinine adjustment; see Section 3.4.)
+**MODERATE novelty (n = 4, plus 1 artifact):** Four associations involved chemicals with emerging but limited evidence: methylmercury with ALP, blood manganese with BMI and waist circumference, and total mercury with ALP. A fifth association initially classified as MODERATE---urinary iodine with BMI---was subsequently identified as a probable dilution artifact after creatinine adjustment (see Section 3.4) and is excluded from the robust finding count.
 
 **LOW-MODERATE (n = 2):** Two findings---selenium with hemoglobin and RBC count---had limited but consistent prior literature supporting selenium's role in erythropoiesis.
 
@@ -236,7 +236,7 @@ Structured literature review classified the 15 validated findings into four nove
 | Blood manganese | BMI^b^ | 2.59 | (1.87, 3.30) | MODERATE | 2 | Very limited literature; adult population data scarce |
 | Blood manganese | Waist circumference^b^ | 7.16 | (5.33, 8.99) | MODERATE | 2 | Same sparse literature as Mn-BMI |
 | Blood mercury (total) | ALP (log) | -0.04 | (-0.05, -0.03) | MODERATE | 1 | Total Hg-ALP largely unstudied at population level |
-| Urinary iodine | BMI^b^ | 1.18 | (0.78, 1.58) | MODERATE^a^ | 8 | Eliminated by creatinine adjustment (dilution artifact) |
+| Urinary iodine | BMI^b^ | 1.18 | (0.78, 1.58) | ARTIFACT^a^ | 8 | Eliminated by creatinine adjustment (dilution artifact) |
 | Blood selenium | Hemoglobin | 2.16 | (1.74, 2.58) | LOW-MOD | 4 | Limited but consistent; selenium essential for erythropoiesis |
 | Blood selenium | RBC count | 0.55 | (0.40, 0.70) | LOW-MOD | 4 | Same literature base as selenium-hemoglobin |
 | Blood lead | BMI^b^ | -1.95 | (-2.51, -1.38) | LOW | 29 | Well-documented; subject to volume dilution bias |
@@ -245,11 +245,11 @@ Structured literature review classified the 15 validated findings into four nove
 | Blood lead | Total cholesterol | 9.10 | (6.55, 11.65) | LOW | 53 | Well-established via oxidative stress pathway |
 | Blood selenium | Total cholesterol | 39.59 | (30.02, 49.15) | LOW | 22 | Well-documented across multiple populations |
 
-^a^ Urinary iodine--BMI association eliminated after creatinine adjustment ($\beta$: 1.18 $\rightarrow$ 0.40, p = 0.15); classified as probable dilution artifact.
+^a^ Urinary iodine--BMI association eliminated after creatinine adjustment ($\beta$: 1.18 $\rightarrow$ 0.40, p = 0.15); reclassified from MODERATE to ARTIFACT and excluded from robust finding counts.
 
 ^b^ Models for BMI and waist circumference outcomes omit BMI from the covariate set to avoid collider bias; effect sizes not directly comparable to other findings.
 
-# 4. Discussion
+# Discussion
 
 This comprehensive ExWAS of NHANES 2017--2018 systematically screened 2,796 chemical biomarker--health outcome combinations and identified 15 cross-cycle validated associations that survived a rigorous four-stage pipeline: FDR correction, cross-cycle replication, dose--response assessment, and multi-specification sensitivity analysis. Extended sensitivity analyses, including urinary creatinine adjustment, subsequently identified one association (iodine--BMI) as a dilution artifact, yielding 14 robustly validated findings. Among these, three HIGH-novelty and four MODERATE-novelty findings represent potentially important contributions to environmental epidemiology.
 
@@ -305,7 +305,7 @@ The three HIGH-novelty findings---DMA with uric acid, perchlorate with BUN, and 
 
 At a methodological level, the fact that this pipeline simultaneously recovered well-established associations (lead--cholesterol, selenium--cholesterol) and surfaced genuinely new signals (DMA--uric acid, perchlorate--BUN) suggests that multi-stage ExWAS can be both sensitive and specific. The key is the validation architecture: any single-stage screen of 2,796 tests will produce false positives, but requiring FDR significance, cross-cycle replication, dose--response confirmation, and sensitivity robustness filters these out effectively. We would encourage future ExWAS studies to adopt similar multi-stage frameworks, particularly cross-cycle validation, which proved to be the most informative filter in this analysis.
 
-# 5. Conclusions
+# Conclusions
 
 In this multi-stage ExWAS of 2,796 chemical biomarker--health outcome associations in NHANES 2017--2018, we identified 15 cross-cycle validated findings that survived global FDR correction, replication in NHANES 2015--2016, dose--response analysis, and nine sensitivity specifications. Additional creatinine adjustment identified one urinary association (iodine--BMI) as a dilution artifact, yielding 14 robustly validated findings. Of three HIGH-novelty associations, two---dimethylarsonic acid with uric acid and perchlorate with blood urea nitrogen---survived all sensitivity checks including dietary confounding assessment and represent genuinely novel findings warranting prospective investigation; the third (methylmercury--waist circumference) is likely explained by fish consumption patterns. The identification of the iodine--BMI association as a dilution artifact demonstrates the value of analyte-specific sensitivity checks beyond standard demographic robustness analyses. These results demonstrate the value of systematic, multi-stage ExWAS for generating robust hypotheses from population biomonitoring data.
 
