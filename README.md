@@ -22,6 +22,7 @@ We screened 2,796 chemical-health associations in a nationally representative US
 | `06_figures_tables.R` | Volcano plot, forest plot, dose-response curves, heatmap, Table 1-3 | No |
 | `07_novelty_assessment.R` | Structured PubMed literature search and novelty classification | **Yes** |
 | `09_additional_analyses.R` | Fish/PA/alcohol/creatinine sensitivity, improved volcano plot, power analysis, expanded PubMed search | **Yes** |
+| `10_extended_sensitivity.R` | 24h dietary fish adjustment, quadratic age, standardized volcano plots, DAG, systematic novelty search | **Yes** |
 
 ### Input Data (CSV)
 
@@ -47,6 +48,9 @@ These three files are outputs of the original interactive screening phase (run i
 | `novelty_assessment.csv` | `07_novelty_assessment.R` |
 | `additional_sensitivity_results.csv` | `09_additional_analyses.R` |
 | `power_analysis.csv` | `09_additional_analyses.R` |
+| `figures/table_s12_fish_24h_sensitivity.csv` | `10_extended_sensitivity.R` |
+| `figures/table_s13_quadratic_age.csv` | `10_extended_sensitivity.R` |
+| `figures/table_s14_systematic_novelty_search.csv` | `10_extended_sensitivity.R` |
 
 ### Figures and Tables (`figures/`)
 
@@ -60,6 +64,9 @@ These three files are outputs of the original interactive screening phase (run i
 | `table1_demographics.csv` | Weighted sample demographics |
 | `table2_significant_findings.csv` | All FDR-significant findings |
 | `table3_validation.csv` | Cross-cycle validation results |
+| `fig_s16_volcano_standardized.png` | Volcano plot with standardized effect sizes |
+| `fig_s17_volcano_partial_r2.png` | Volcano plot with partial R² |
+| `supplementary_dag.txt` | DAG for covariate selection rationale |
 
 ## Reproducibility
 
@@ -103,8 +110,11 @@ source("06_figures_tables.R")          # ~2 min
 # Step 7: Novelty assessment (PubMed search)
 source("07_novelty_assessment.R")      # ~5 min, requires internet
 
-# Step 8: Additional analyses (reviewer-requested)
+# Step 8: Additional sensitivity analyses
 source("09_additional_analyses.R")     # ~10 min, requires internet
+
+# Step 9: Extended sensitivity (24h fish, quadratic age, standardized plots, DAG)
+source("10_extended_sensitivity.R")    # ~10 min, requires internet
 ```
 
 ### Note on the initial screening phase
