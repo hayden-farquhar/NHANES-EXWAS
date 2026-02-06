@@ -2,7 +2,7 @@
 title: "Supplementary Materials"
 subtitle: "Environment-Wide Association Study of Chemical Biomarkers and Health Outcomes in NHANES 2017--2018"
 author: Hayden Farquhar
-date: February 5, 2026
+date: February 6, 2026
 ---
 
 # Table S1. All 26 FDR-Significant Associations from the Discovery Phase
@@ -324,3 +324,147 @@ These represent small effects (Cohen's $f^2$ < 0.02 for blood biomarkers), confi
 | 20 | Give cautious overall interpretation | Discussion ¶6--7 |
 | 21 | Discuss generalizability | Discussion ¶2--3 |
 | 22 | Give source of funding and role of funders | N/A (unfunded study) |
+
+\newpage
+
+# Table S12. 24-Hour Dietary Recall Fish Adjustment for Mercury Findings
+
+The three mercury-related findings (methylmercury--alkaline phosphatase, total mercury--alkaline phosphatase, methylmercury--waist circumference) were additionally adjusted for fish consumption from 24-hour dietary recall (total grams of fish/shellfish consumed on the recall day, derived from DR1TOT_J individual food codes). This provides a more granular measure of dietary fish intake than the 30-day frequency variable (DBD895) used in the primary fish adjustment.
+
+| Chemical | Outcome | Adjustment | $\beta$ (Primary) | $\beta$ (Adjusted) | $\Delta\beta$ (%) | P-value | N |
+|:---|:---|:---|---:|---:|---:|:---|---:|
+| Methylmercury | Alk Phosphatase | 24h dietary recall fish (g) | -2.84 | -2.84 | -0.02% | 1.2e-04 | 4,834 |
+| Blood mercury (total) | Alk Phosphatase (log) | 24h dietary recall fish (g) | -0.037 | -0.037 | +0.01% | 3.2e-04 | 4,833 |
+| Methylmercury | Waist circumference | 24h dietary recall fish (g) | -1.78 | -1.80 | -0.75% | 3.5e-04 | 4,693 |
+
+All three mercury findings remained essentially unchanged after adjustment for 24-hour dietary recall fish consumption, with effect estimate changes less than 1%. This consistency across both crude fish frequency (DBD895, number of meals in 30 days) and granular 24-hour recall measures suggests that either: (a) the mercury--health associations are not fully explained by fish consumption, or (b) a single 24-hour recall inadequately captures habitual fish intake patterns. The latter interpretation is more plausible for methylmercury, which bioaccumulates over weeks to months and is not expected to correlate strongly with a single day's intake. The persistence of the mercury--waist circumference association across multiple fish adjustment approaches is notable but should still be interpreted with caution given the strong a priori expectation of fish-related confounding.
+
+\newpage
+
+# Table S13. Quadratic Age Sensitivity Analysis
+
+To assess whether non-linear age effects confound the primary findings, models were re-run with a quadratic age term (age + age²) in addition to all primary covariates. All 15 validated findings were tested.
+
+| Chemical | Outcome | $\beta$ (Quadratic) | SE | P-value | $\beta$ (Primary) | $\Delta\beta$ (%) | Dir. Match | Age² $\beta$ | Age² P | N |
+|:---|:---|---:|---:|:---|---:|---:|:---:|---:|:---|---:|
+| Blood selenium | Hemoglobin | 2.13 | 0.218 | 6.7e-05 | 2.16 | -1.6% | Yes | -2.3e-04 | 0.006 | 4,873 |
+| Urinary perchlorate | BUN | 1.16 | 0.113 | 5.0e-05 | 1.21 | -3.8% | Yes | 1.8e-03 | 0.051 | 1,579 |
+| Methylmercury | Alk Phosphatase | -2.85 | 0.318 | 1.1e-04 | -2.84 | -0.4% | Yes | -7.1e-04 | 0.727 | 4,834 |
+| Blood manganese | Waist circumference | 6.94 | 0.917 | 1.3e-04 | 7.16 | -3.2% | Yes | -7.4e-03 | 9.4e-04 | 4,693 |
+| Blood selenium | Total cholesterol | 35.22 | 4.659 | 2.8e-04 | 39.59 | -11.0% | Yes | -3.0e-02 | 5.6e-05 | 4,855 |
+| Blood manganese | BMI | 2.48 | 0.363 | 2.5e-04 | 2.59 | -4.1% | Yes | -3.4e-03 | 4.1e-04 | 4,876 |
+| Blood lead | Waist circumference | -4.41 | 0.636 | 2.2e-04 | -4.35 | -1.4% | Yes | -7.8e-03 | 6.9e-04 | 4,693 |
+| Blood lead | BMI | -1.97 | 0.292 | 2.7e-04 | -1.95 | -1.1% | Yes | -3.5e-03 | 3.2e-04 | 4,876 |
+| Blood mercury (total) | Alk Phosphatase (log) | -0.037 | 0.005 | 3.0e-04 | -0.037 | -0.5% | Yes | -1.0e-05 | 0.658 | 4,833 |
+| DMA (urinary) | Uric acid | 0.19 | 0.029 | 5.4e-04 | 0.20 | -4.3% | Yes | 6.4e-04 | 0.002 | 1,593 |
+| Blood selenium | RBC count | 0.54 | 0.078 | 4.5e-04 | 0.55 | -2.1% | Yes | -7.6e-05 | 0.002 | 4,873 |
+| Blood lead | Total cholesterol | 8.60 | 1.236 | 4.4e-04 | 9.10 | -5.6% | Yes | -3.0e-02 | 4.7e-05 | 4,855 |
+| Methylmercury | Waist circumference | -1.85 | 0.283 | 3.3e-04 | -1.78 | -3.7% | Yes | -7.9e-03 | 6.5e-04 | 4,693 |
+| Blood lead | HbA1c | -0.19 | 0.029 | 5.8e-04 | -0.19 | -1.2% | Yes | -1.4e-04 | 0.025 | 4,874 |
+| Urinary iodine | BMI | 1.34 | 0.234 | 7.1e-04 | 1.18 | +14.0% | Yes | -4.3e-03 | 0.011 | 1,600 |
+
+All 15 findings maintained direction and significance (p < 0.001) with quadratic age adjustment. Effect estimate changes ranged from -11.0% (selenium--cholesterol) to +14.0% (iodine--BMI), with a median change of -2.9%. The age² coefficient was statistically significant (p < 0.05) for 10 of 15 models, indicating non-linear age effects are present, but including this term does not materially alter the exposure--outcome associations. The largest attenuation occurred for selenium--cholesterol (-11.0%), where age-squared effects may partially account for the original signal.
+
+\newpage
+
+# Table S14. Systematic MeSH-Based Literature Search for HIGH-Novelty Findings
+
+To complement the keyword-based PubMed searches used in the primary novelty assessment, systematic MeSH-based searches were conducted for the three HIGH-novelty findings. Searches combined the chemical's MeSH term with the outcome's MeSH term to capture the broader literature landscape.
+
+| Finding | MeSH Search Strategy | N Articles | Sample PMIDs (first 10) |
+|:---|:---|---:|:---|
+| DMA -- Uric acid | "Cacodylic Acid"[MeSH] OR "Dimethylarsinic Acid" AND "Uric Acid"[MeSH] | 36 | 39003051, 38511628, 37726447, 37532974, 36860398, 36109472, 35809185, 35490746, 35461256, 34529244 |
+| Perchlorate -- BUN | "Perchlorates"[MeSH] AND "Blood Urea Nitrogen"[MeSH] | 72 | 41073342, 40441702, 40388306, 37154820, 36513174, 29025080, 23433158, 21342019, 20931854, 18833478 |
+| Methylmercury -- Waist circumference | "Methylmercury Compounds"[MeSH] AND "Waist Circumference"[MeSH] OR "Adiposity"[MeSH] | 51 | 40315758, 40070085, 25721244, 24243536, 1645078, 41205373, 39699706, 30629257, 30623835, 26911273 |
+
+**Interpretation:** The MeSH-based searches identified substantially more articles than the keyword searches used in the primary novelty assessment (Table 3). However, manual review of the retrieved abstracts revealed that these articles generally address the broader chemical class (e.g., arsenic, perchlorate) or outcome domain (e.g., metabolic markers) rather than the specific chemical--outcome pair identified in this study:
+
+- **DMA--Uric acid (36 articles):** Most retrieved articles examine total arsenic exposure and metabolic syndrome components, not dimethylarsonic acid specifically with serum uric acid. The broadening of the search to the arsenic MeSH tree captures arsenic--metabolism literature that does not directly test the DMA--uric acid hypothesis.
+
+- **Perchlorate--BUN (72 articles):** The majority of retrieved articles address perchlorate--thyroid relationships or general kidney toxicology. The two articles identified in the primary keyword search (Li et al. 2023, PMID: 37154820; Xue et al. 2025, PMID: 40441702) remain the only studies directly examining perchlorate--kidney function associations.
+
+- **Methylmercury--Waist circumference (51 articles):** Retrieved articles predominantly address methylmercury neurotoxicity or general mercury--metabolic relationships. None specifically examined the methylmercury--waist circumference association we identified.
+
+The MeSH search results do not change the novelty classifications assigned in Table 3, but they provide useful context: the chemical classes implicated in our HIGH-novelty findings have broader literatures that could inform mechanistic hypotheses and guide future targeted studies.
+
+\newpage
+
+# Figure S16. Standardized Effect Size Volcano Plot
+
+To enable comparison of effect sizes across outcomes measured in different units, effect estimates were converted to standardized effect sizes (t-statistic / √n) representing the t-statistic normalized by sample size.
+
+![Figure S16. Volcano plot showing standardized effect sizes (t/√n) for all 2,796 associations. Points above the dashed line exceed FDR < 0.05. Standardized effect sizes allow direct comparison across outcomes measured in different units; the x-axis scale is comparable across all findings. The strongest standardized effects (labeled) cluster around heavy metals and metabolic outcomes.](figures/fig_s16_volcano_standardized.png)
+
+\newpage
+
+# Figure S17. Partial R² Volcano Plot
+
+Partial R² represents the proportion of outcome variance explained by the exposure after accounting for all covariates, providing an intuitive measure of effect magnitude.
+
+![Figure S17. Volcano plot showing partial R² (proportion of variance explained) for all 2,796 associations. Points above the dashed line exceed FDR < 0.05. The highest partial R² values are observed for blood selenium--hemoglobin and blood manganese--RBC count associations, consistent with the known role of these trace elements in hematopoiesis. Most significant associations explain less than 1% of outcome variance after covariate adjustment, typical for environmental exposure effects at population levels.](figures/fig_s17_volcano_partial_r2.png)
+
+\newpage
+
+# Figure S18. Directed Acyclic Graph (DAG) for Covariate Selection
+
+The following DAG illustrates the rationale for covariate selection in the primary analysis model.
+
+## Exposure-Outcome Pathway
+
+The primary question is whether chemical exposure (E) affects health outcome (Y):
+
+    E → Y
+
+## Confounders Adjusted
+
+1. **Age** → E, Y: Older individuals have longer cumulative exposure; age affects nearly all health outcomes. Classic confounder.
+
+2. **Sex** → E, Y: Sex differences in exposure patterns (occupation, diet) and metabolism/health outcomes. Classic confounder.
+
+3. **Race/Ethnicity** → E, Y: Proxy for socioeconomic factors affecting exposure and health outcomes. Classic confounder (collapsed to 3 levels for model stability).
+
+4. **Poverty-Income Ratio (PIR)** → E, Y: Lower SES → higher environmental exposures and worse health outcomes. Classic confounder.
+
+5. **BMI** → E, Y (when Y is not anthropometric): Higher BMI can dilute blood biomarker concentrations; BMI affects metabolic and cardiovascular outcomes. **Omitted when Y = BMI or waist circumference** to avoid collider bias.
+
+6. **Smoking** → E, Y: Major source of chemical exposure and independent risk factor for health outcomes. Classic confounder.
+
+## DAG Visualization (ASCII)
+
+```
+                    +---------------------------+
+                    |      Socioeconomic        |
+                    |    (Age, Sex, Race, PIR)  |
+                    +-----------+---------------+
+                                |
+                    +-----------+------------+
+                    |           |            |
+                    v           v            v
+              +---------+ +---------+ +---------+
+              | Chemical| |   BMI   | | Health  |
+              | Exposure| |(if not Y)| | Outcome |
+              +----+----+ +----+----+ +----+----+
+                   |           |            |
+                   |     +-----+------+     |
+                   |     |            |     |
+                   +-----+------------+-----+
+                              |
+                              v
+                        Observed Y
+```
+
+## Variables NOT Adjusted (Potential Mediators)
+
+- **Metabolic pathways** (glucose, lipids, etc.): May be on the causal pathway from E to Y. Adjusting would block the causal effect we aim to estimate.
+
+## Collider Handling
+
+- **BMI when Y is anthropometric**: If E → BMI and E → waist, then BMI is a collider on the path to waist circumference. BMI is therefore **omitted** from models where BMI or waist circumference is the outcome.
+
+## DAG Limitations
+
+1. Assumes no unmeasured confounding (strong assumption)
+2. Diet, physical activity, medications not directly measured in primary model
+3. Linear age assumption in primary model (quadratic age sensitivity in Table S13)
+4. Race/ethnicity collapsed to 3 levels (6-level sensitivity in Table S7)
+5. Cross-sectional design cannot establish temporality

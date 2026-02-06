@@ -1,0 +1,88 @@
+
+# Directed Acyclic Graph (DAG) for Covariate Selection
+
+The following DAG justifies the covariate selection for the primary analysis model:
+
+## Exposure-Outcome Pathway
+
+The primary question is whether chemical exposure (E) affects health outcome (Y):
+
+    E -> Y
+
+## Confounders Adjusted
+
+1. **Age** -> E, Y
+   - Older individuals have longer cumulative exposure (E)
+   - Age affects nearly all health outcomes (Y)
+   - Classic confounder; must adjust
+
+2. **Sex** -> E, Y
+   - Sex differences in exposure patterns (occupation, diet)
+   - Sex differences in metabolism and health outcomes
+   - Classic confounder; must adjust
+
+3. **Race/Ethnicity** -> E, Y
+   - Proxy for socioeconomic factors affecting exposure
+   - Associated with health outcomes via multiple pathways
+   - Classic confounder; must adjust (collapsed to 3 levels for stability)
+
+4. **Poverty-Income Ratio (PIR)** -> E, Y
+   - Lower SES -> higher environmental exposures
+   - Lower SES -> worse health outcomes
+   - Classic confounder; must adjust
+
+5. **BMI** -> E, Y (when Y is not anthropometric)
+   - Higher BMI can dilute blood biomarker concentrations
+   - BMI affects metabolic, cardiovascular outcomes
+   - Confounder for non-anthropometric outcomes
+   - OMITTED when Y = BMI or waist circumference (collider)
+
+6. **Smoking** -> E, Y
+   - Smoking is a major source of chemical exposure
+   - Smoking independently affects health outcomes
+   - Classic confounder; must adjust
+
+## Potential Mediators (NOT adjusted)
+
+- **Metabolic pathways** (glucose, lipids, etc.)
+  - May be on the causal pathway from E to Y
+  - Adjusting would block causal effect
+  - NOT adjusted in primary analysis
+
+## Potential Colliders (NOT adjusted or carefully handled)
+
+- **BMI when Y is anthropometric**
+  - If E -> BMI and E -> waist, BMI is a collider
+  - Adjusting would induce spurious association
+  - BMI is OMITTED from models with BMI or waist as outcome
+
+## DAG Visualization (ASCII)
+
+                    +---------------------------+
+                    |      Socioeconomic        |
+                    |    (Age, Sex, Race, PIR)  |
+                    +-----------+---------------+
+                                |
+                    +-----------+------------+
+                    |           |            |
+                    v           v            v
+              +---------+ +---------+ +---------+
+              | Chemical| |   BMI   | | Health  |
+              | Exposure| |(if not Y)| | Outcome |
+              +----+----+ +----+----+ +----+----+
+                   |           |            |
+                   |     +-----+------+     |
+                   |     |            |     |
+                   +-----+------------+-----+
+                              |
+                              v
+                        Observed Y
+
+## Limitations of DAG
+
+1. Assumes no unmeasured confounding (strong assumption)
+2. Diet, physical activity, medications not directly measured
+3. Linear age assumption (no age^2 term in primary model)
+4. Race/ethnicity collapsed (effect modification possible)
+5. Cross-sectional design cannot establish temporality
+
