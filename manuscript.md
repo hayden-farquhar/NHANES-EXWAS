@@ -197,7 +197,7 @@ All 15 initially validated findings were classified as robust under the nine pri
 
 Effect estimates held up across sex-stratified and age-stratified subgroups, after exclusion of extreme outliers, with additional adjustment for education, and when substituting serum cotinine (LBXCOT) for the binary smoking indicator. None of the validated associations appeared driven by a single demographic subgroup or by influential outliers. Adding education as an additional covariate---a proxy for socioeconomic position beyond the poverty--income ratio already in the primary model---did not materially change any point estimate, which suggests the primary covariate set adequately captures socioeconomic confounding. Replacing self-reported smoking with continuous cotinine, an objective nicotine biomarker, likewise produced near-identical results; this rules out smoking misclassification as an explanation for any of the observed signals.
 
-![Chemical--outcome association heatmap showing signed $-\log_{10}$(p-value) for all nominally significant (p < 0.05) associations from the primary analysis. Rows represent chemical exposures (clustered by similarity); columns represent health outcomes (clustered by domain). Blue indicates positive associations; red indicates negative associations; color intensity reflects statistical significance. This figure displays the full association landscape; for sensitivity analysis results specific to the 15 initially validated findings (14 after excluding the iodine--BMI dilution artifact), see Figures S1--S15.](figures/fig4_heatmap.pdf)
+![Chemical--outcome association heatmap showing signed $-\log_{10}$(p-value) for all nominally significant (p < 0.05) associations from the primary analysis. Rows represent chemical exposures (clustered by similarity); columns represent health outcomes (clustered by domain). Blue indicates positive associations; red indicates negative associations; color intensity reflects statistical significance. This figure displays the full association landscape; for sensitivity analysis results specific to the 15 initially validated findings (14 after excluding the iodine--BMI dilution artifact), see Figures S1--S15.](figures/fig4_heatmap.png)
 
 Individual sensitivity forest plots for each validated finding are provided in the Supplementary Materials (Figures S1--S15).
 
@@ -307,7 +307,7 @@ At a methodological level, the fact that this pipeline simultaneously recovered 
 
 # Conclusions
 
-In this multi-stage ExWAS of 2,796 chemical biomarker--health outcome associations in NHANES 2017--2018, we identified 15 cross-cycle validated findings that survived global FDR correction, replication in NHANES 2015--2016, dose--response analysis, and nine sensitivity specifications. Additional creatinine adjustment identified one urinary association (iodine--BMI) as a dilution artifact, yielding 14 robustly validated findings. Of three HIGH-novelty associations, two---dimethylarsonic acid with uric acid and perchlorate with blood urea nitrogen---survived all sensitivity checks including dietary confounding assessment and represent genuinely novel findings warranting prospective investigation; the third (methylmercury--waist circumference) is likely explained by fish consumption patterns. The identification of the iodine--BMI association as a dilution artifact demonstrates the value of analyte-specific sensitivity checks beyond standard demographic robustness analyses. These results demonstrate the value of systematic, multi-stage ExWAS for generating robust hypotheses from population biomonitoring data.
+In this multi-stage ExWAS of 2,796 chemical biomarker--health outcome associations in NHANES 2017--2018, we identified 15 cross-cycle validated findings, of which 14 proved robust after analyte-specific sensitivity checks (urinary creatinine adjustment identified iodine--BMI as a dilution artifact). Of three HIGH-novelty associations, two---dimethylarsonic acid with uric acid and perchlorate with blood urea nitrogen---survived all sensitivity checks including dietary confounding assessment and represent genuinely novel findings warranting prospective investigation; the third (methylmercury--waist circumference) is likely explained by fish consumption patterns. The identification of the iodine--BMI association as a dilution artifact demonstrates the value of analyte-specific sensitivity checks beyond standard demographic robustness analyses. These results demonstrate the value of systematic, multi-stage ExWAS for generating robust hypotheses from population biomonitoring data.
 
 # Data and Code Availability
 
@@ -373,7 +373,7 @@ All analysis code and result files are publicly available at <https://github.com
 
 22. Li M, Wang Y, Liu Y, et al. Association between urinary perchlorate, nitrate, and thiocyanate and kidney function: NHANES 2005--2018. *Environ Sci Pollut Res*. 2023;30:60894--60907.
 
-23. Xue W, Chen Y, Zhang L, et al. Perchlorate exposure and kidney function in US adolescents: NHANES 2005--2016. *Environ Health Perspect*. 2025;133(1):17005.
+23. Xue X, Zhang Z, Hun M, Wen M, Zhao M, He Q. The hidden danger: prolonged exposure to inorganic contaminants and kidney health in adolescents. *Ren Fail*. 2025;47(1):2506818. doi:10.1080/0886022X.2025.2506818
 
 ## Mercury and Health Outcomes
 
