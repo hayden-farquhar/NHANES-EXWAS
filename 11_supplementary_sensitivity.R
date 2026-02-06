@@ -1,5 +1,5 @@
-# 11_reviewer_sensitivity.R
-# Additional sensitivity analyses requested during peer review:
+# 11_supplementary_sensitivity.R
+# Additional sensitivity analyses for robustness:
 # 1. eGFR-adjusted sensitivity for perchlorate-BUN (Table S15)
 # 2. E-value analysis for HIGH-novelty findings
 # 3. Verify alcohol adjustment direction (bidirectional vs systematic attenuation)
@@ -13,7 +13,7 @@ load("exwas_novelty_screen.RData")  # dat: 5265x609
 # Load validation results for primary estimates
 validation <- read_csv("validation_results.csv")
 
-cat("=== Additional Sensitivity Analyses for Reviewer Feedback ===\n\n")
+cat("=== Additional Sensitivity Analyses ===\n\n")
 
 # -----------------------------------------------------------------------------
 # 1. eGFR-Adjusted Sensitivity for Perchlorate-BUN

@@ -22,7 +22,7 @@ source("06_figures_tables.R")         # All figures + Tables 1-3
 source("07_novelty_assessment.R")     # PubMed literature search + novelty classification
 source("09_additional_analyses.R")    # All sensitivity: fish/PA/alcohol/creatinine/protein, 6-level race, within-round FDR, LOD, STROBE
 source("10_extended_sensitivity.R")   # 24h dietary fish, quadratic age, standardized volcano, DAG, systematic novelty search
-source("11_reviewer_sensitivity.R")  # eGFR-adjusted perchlorate-BUN, E-values, alcohol direction verification
+source("11_supplementary_sensitivity.R")  # eGFR-adjusted perchlorate-BUN, E-values, alcohol direction verification
 ```
 
 Required packages: `nhanesA`, `survey`, `tidyverse`, `broom`, `ggrepel`, `forestplot`, `pheatmap`, `kableExtra`, `tableone`, `knitr`, `rmarkdown`. Script `00_functions.R` auto-installs missing packages.
