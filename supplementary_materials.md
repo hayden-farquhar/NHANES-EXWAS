@@ -395,8 +395,8 @@ To address potential reverse causation (impaired renal function could increase b
 
 | Model | $\beta$ | SE | P-value | % Change | N |
 |:---|---:|---:|:---|---:|---:|
-| Primary (no eGFR) | 1.21 | 0.124 | 2.5e-05 | -- | 1,605 |
-| eGFR-adjusted | 1.11 | 0.095 | 2.4e-05 | -8.5% | 1,605 |
+| Primary (no eGFR) | 1.21 | 0.124 | 2.5e-05 | -- | 1,579 |
+| eGFR-adjusted | 1.11 | 0.095 | 2.4e-05 | -8.5% | 1,579 |
 
 **Interpretation:** The perchlorate-BUN association was attenuated by 8.5% after eGFR adjustment, remaining highly significant (p = 2.4 × 10^-5^). This modest attenuation suggests that the observed association is not primarily driven by reverse causation through impaired renal function. The eGFR coefficient in the adjusted model was negative (β = -0.12, p < 0.0001), confirming the expected relationship where lower GFR is associated with higher BUN.
 
@@ -424,7 +424,7 @@ Partial R² represents the proportion of outcome variance explained by the expos
 
 The following DAG illustrates the rationale for covariate selection in the primary analysis model.
 
-![Figure S18. Directed acyclic graph (DAG) showing the assumed causal structure underlying covariate selection. Socioeconomic factors (age, sex, race/ethnicity, poverty-income ratio) are common causes of both chemical exposure and health outcomes. BMI is included as a covariate when the outcome is not anthropometric, but omitted when the outcome is BMI or waist circumference to avoid collider bias. Smoking is adjusted as both an exposure source and independent risk factor. Variables on the causal pathway (e.g., metabolic intermediates) are not adjusted to avoid blocking the effect of interest.](figures/fig_s18_dag.pdf)
+![Figure S18. Directed acyclic graph (DAG) showing the assumed causal structure underlying covariate selection for the **primary model**. The six measured confounders in the primary model are: age, sex, race/ethnicity (3-level), poverty-income ratio, BMI (when outcome is not anthropometric), and smoking. Education is NOT included in the primary model but is tested as an additional covariate in sensitivity analyses (Table S3). Variables on the causal pathway (e.g., metabolic intermediates) are not adjusted to avoid blocking the effect of interest.](figures/fig_s18_dag.pdf)
 
 ## Covariate Rationale
 
