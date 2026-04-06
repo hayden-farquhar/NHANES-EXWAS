@@ -15,6 +15,10 @@
 .claude/
 CLAUDE.md
 
+# Focused analysis outputs (regenerable from scripts)
+dma_uric_acid_outputs/
+perchlorate_bun_outputs/
+
 # OS files
 .DS_Store
 Thumbs.db

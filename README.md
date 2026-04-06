@@ -144,9 +144,18 @@ All data come from the [National Health and Nutrition Examination Survey (NHANES
 - **Multiple testing**: Benjamini-Hochberg FDR applied globally across all 2,796 tests
 - **Weights**: `WTMEC2YR` (blood), `WTSA2YR` (urinary subsample), `WTSSBJ2Y` (surplus serum)
 
+## Related Projects
+
+Two HIGH-novelty findings from this ExWAS were developed into standalone focused papers with deeper mechanistic investigation:
+
+- **Project 29 — DMA and Uric Acid**: Dimethylarsonic acid association with uric acid. Repository: [hayden-farquhar/DMA-uric-acid](https://github.com/hayden-farquhar/DMA-uric-acid) (if available)
+- **Project 30 — Perchlorate and BUN**: Perchlorate association with blood urea nitrogen. Repository: [hayden-farquhar/perchlorate-BUN](https://github.com/hayden-farquhar/perchlorate-BUN) (if available)
+
+Both spin-off projects use the same NHANES 2017-2018 and 2015-2016 data sources as this parent ExWAS analysis.
+
 ## Citation
 
-> Farquhar H. Environment-Wide Association Study of Chemical Biomarkers and Health Outcomes in NHANES 2017-2018: Discovery, Validation, and Dose-Response Analysis. 2026.
+> Farquhar H. Environment-Wide Association Study of Chemical Biomarkers and Health Outcomes in NHANES 2017-2018: Discovery, Validation, and Dose-Response Analysis. *Preprint*. 2026. https://doi.org/10.64898/2026.02.07.26345792. Manuscript under consideration at a peer-reviewed journal.
 
 ## License
 
