@@ -24,6 +24,18 @@ We screened 2,796 chemical-health associations in a nationally representative US
 | `09_additional_analyses.R` | Fish/PA/alcohol/creatinine sensitivity, improved volcano plot, power analysis, expanded PubMed search | **Yes** |
 | `10_extended_sensitivity.R` | 24h dietary fish adjustment, quadratic age, standardized volcano plots, DAG, systematic novelty search | **Yes** |
 
+### DMA--Uric Acid Enhanced Analysis (Scripts 13--15)
+
+These scripts implement the multi-cycle analysis for the DMA--uric acid focused paper, extending the original 2-cycle finding (Script 11) to 7 independent NHANES cycles (2005--2018) with metal-mixture analysis, formal mediation, and comprehensive sensitivity testing.
+
+| Script | Purpose | Internet required |
+|--------|---------|:-:|
+| `13_dma_multicycle_extraction.R` | Download and harmonise 7 NHANES cycles (2005--2018): DMA, uric acid, covariates, metals panel, GGT, arsenobetaine, metabolic syndrome variables | **Yes** (first run) |
+| `14_dma_enhanced_analyses.R` | Cycle-specific meta-analysis, eGFR + GGT mediation, PAF, interaction tests, arsenobetaine adjustment, temporal trend, sensitivity analyses | No |
+| `15_dma_mixture_analysis.R` | Triple metal-mixture analysis (WQS + qgcomp + BKMR) on 9 urinary metals | No |
+
+Outputs are saved to `dma_uric_acid_outputs/`.
+
 ### Input Data (CSV)
 
 These three files are outputs of the original interactive screening phase (run in R console, not captured in scripts). They are included as inputs required by `01_consolidate_results.R`:
@@ -148,7 +160,7 @@ All data come from the [National Health and Nutrition Examination Survey (NHANES
 
 Two HIGH-novelty findings from this ExWAS were developed into standalone focused papers with deeper mechanistic investigation:
 
-- **Project 29 — DMA and Uric Acid**: Dimethylarsonic acid association with uric acid. Repository: [hayden-farquhar/DMA-uric-acid](https://github.com/hayden-farquhar/DMA-uric-acid) (if available)
+- **Project 29 — DMA and Uric Acid**: Multi-cycle replication (7 NHANES cycles, 2005--2018), metal-mixture analysis, and GGT mediation. Enhanced analysis scripts 13--15 in this repository.
 - **Project 30 — Perchlorate and BUN**: Perchlorate association with blood urea nitrogen. Repository: [hayden-farquhar/perchlorate-BUN](https://github.com/hayden-farquhar/perchlorate-BUN) (if available)
 
 Both spin-off projects use the same NHANES 2017-2018 and 2015-2016 data sources as this parent ExWAS analysis.
