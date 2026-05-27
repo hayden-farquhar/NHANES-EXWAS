@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20419526.svg)](https://doi.org/10.5281/zenodo.20419526)
+
 # NHANES ExWAS 2017-2018: Environment-Wide Association Study
 
 Environment-wide association study (ExWAS) of 92 chemical biomarkers and 48 health outcomes using NHANES 2017-2018, with cross-cycle validation in NHANES 2015-2016.
